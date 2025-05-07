@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-5xl">
         <div className="flex flex-col items-center md:items-start gap-2 max-w-md">
           <div className="text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Learnbud</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-950">Learnbud</h1>
             <p className="text-gray-600 text-xl">Your personalized AI lecturer</p>
           </div>
           <p className="hidden md:block text-gray-700 text-base w-96">
@@ -38,7 +38,7 @@ export default function Home() {
                 muted={isMuted}
                 playsInline
               >
-                <source src="/lecture-new.mp4" type="video/mp4" />
+                <source src="/lecture.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
