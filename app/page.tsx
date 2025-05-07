@@ -38,7 +38,7 @@ export default function Home() {
                 muted={isMuted}
                 playsInline
               >
-                <source src="/lecture.mp4" type="video/mp4" />
+                <source src="/lecture-new.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
