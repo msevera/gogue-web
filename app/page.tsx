@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center pt-12 p-4 md:pt-4">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center pt-10 p-4 md:pt-4">
       <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-5xl">
         <div className="flex flex-col items-center md:items-start gap-2 max-w-md">
           <div className="text-center md:text-left">
