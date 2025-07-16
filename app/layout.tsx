@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Learnbud - personalized AI-powered lectures",
-  description: "AI-powered audio and video lectures, each lasting 5 to 15 minutes. Users can interact with an AI lecturer in real time—interrupting to ask questions, explore sub-topics, create side notes, pause, rewind, and more.",
+  title: "Gogue - expand your knowledge in 15 minutes.",
+  description: "AI-powered audio micro-lectures, each lasting 5 to 10 minutes. Users can interact with lectures in real time—interrupting to ask questions, explore sub-topics, create side notes, pause, rewind, and more.",
 };
 
 export default function RootLayout({

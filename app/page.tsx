@@ -10,12 +10,11 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-5xl">
         <div className="flex flex-col items-center md:items-start gap-2 max-w-md">
           <div className="text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-950">Learnbud</h1>
-            <p className="text-gray-600 text-xl">Your personalized AI lecturer</p>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-950">Gogue</h1>
+            <p className="text-gray-600 text-xl">Expand your knowledge in 15 minutes.</p>
           </div>
           <p className="hidden md:block text-gray-700 text-base w-96">
-            Experience learning reimagined with AI-powered personalized lectures, 
-            interactive lessons, and real-time feedback.
+          Audio lectures where you can interact with the AI tutor in real time.
           </p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
