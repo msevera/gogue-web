@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const [isMuted, setIsMuted] = useState(true);
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -129,7 +126,7 @@ export default function Home() {
         {/* Problem/Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">The internet has everything. Finding and learning from it doesn't have to be hard.</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">The internet has everything. Finding and learning from it doesn&#39;t have to be hard.</h2>
             <p className="text-lg text-gray-600 mb-8">
               Millions of articles, videos, and research papers exist on every topic imaginable. But who has time to read through it all?
               Gogue transforms this vast public knowledge into bite-sized, personalized audio experiences you can consume anywhere.
