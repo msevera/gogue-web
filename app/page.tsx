@@ -10,11 +10,20 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="border-b border-gray-100 border">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image src="/logo.svg" alt="Gogue" width={120} height={32} />
           </div>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lg:hidden inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Join Waitlist
+          </a>
         </div>
+
       </header>
 
       {/* Hero Section */}
@@ -32,7 +41,7 @@ export default function Home() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="hidden lg:inline-flex items-center px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Join Waitlist
             </a>
@@ -44,14 +53,14 @@ export default function Home() {
               {/* Background Phone - Left */}
               <div className="absolute bottom-0 left-0 w-[195px] h-[400px] bg-black rounded-[30px] p-2 shadow-xl  transform z-30">
                 <div className="w-full h-full bg-gray-900 rounded-[24px] overflow-hidden">
-                  <Image 
-                    src="/phone/img6.png" 
-                    alt="Gogue App Screen 1" 
-                    width={176} 
+                  <Image
+                    src="/phone/img6.png"
+                    alt="Gogue App Screen 1"
+                    width={176}
                     height={356}
                     className="w-full h-full object-cover"
                   />
-                </div>                
+                </div>
               </div>
 
               {/* Background Phone - Right */}
@@ -70,14 +79,14 @@ export default function Home() {
               {/* Main Phone - Center Front */}
               <div className="absolute top-0 right-0 transform w-[250px] h-[530px] bg-black rounded-[35px] p-2 shadow-xl z-20">
                 <div className="w-full h-full bg-gray-900 rounded-[28px] overflow-hidden">
-                  <Image 
-                    src="/phone/img3.png" 
-                    alt="Gogue App Main Screen" 
-                    width={216} 
+                  <Image
+                    src="/phone/img3.png"
+                    alt="Gogue App Main Screen"
+                    width={216}
                     height={436}
                     className="w-full h-full object-cover"
                   />
-                </div>                               
+                </div>
               </div>
             </div>
           </div>
@@ -122,7 +131,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">The internet has everything. Finding and learning from it doesn't have to be hard.</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Millions of articles, videos, and research papers exist on every topic imaginable. But who has time to read through it all? 
+              Millions of articles, videos, and research papers exist on every topic imaginable. But who has time to read through it all?
               Gogue transforms this vast public knowledge into bite-sized, personalized audio experiences you can consume anywhere.
             </p>
             <div className="grid md:grid-cols-2 gap-8 text-left">
