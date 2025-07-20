@@ -12,19 +12,22 @@ function formatTime(seconds: number, munutesOnly?: boolean) {
   return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
 
+// Type guard for HLS instances
+function isHlsInstance(obj: unknown): obj is { destroy: () => void } {
+  return obj !== null && typeof obj === 'object' && 'destroy' in obj && typeof (obj as Record<string, unknown>).destroy === 'function';
+}
 
 // Client component for lecture showcase with audio functionality
 export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
   const [audioElements, setAudioElements] = useState<Record<string, HTMLAudioElement>>({});
-  const [hlsInstances, setHlsInstances] = useState<Record<string, any>>({});
-  console.log('lectures', lectures.length);
+  const [hlsInstances, setHlsInstances] = useState<Record<string, unknown>>({});  
 
   useEffect(() => {
     // Cleanup on unmount
     return () => {
       Object.values(hlsInstances).forEach(hls => {
-        if (hls && hls.destroy) {
+        if (isHlsInstance(hls)) {
           hls.destroy();
         }
       });
@@ -44,7 +47,7 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
 
       // Destroy HLS instance if exists
       const currentHls = hlsInstances[currentlyPlaying];
-      if (currentHls && currentHls.destroy) {
+      if (isHlsInstance(currentHls)) {
         currentHls.destroy();
         setHlsInstances(prev => {
           const newInstances = { ...prev };
@@ -86,7 +89,7 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
           setCurrentlyPlaying(lectureId);
         });
 
-        hls.on(Hls.Events.ERROR, (event: any, data: any) => {
+        hls.on(Hls.Events.ERROR, (event: unknown, data: unknown) => {
           console.error('HLS error:', data);
         });
 
@@ -155,38 +158,36 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
               style={{
                 backgroundColor: `${lecture.image?.color}4D`,
               }}>
-              <div className='text-gray-800 text-xs'>{formatTime(lecture?.audio?.duration!, true)}min</div>
+              <div className='text-gray-800 text-xs'>{formatTime(lecture?.audio?.duration || 0, true)}min</div>
             </div>
           </div>
         </div>
-      ))}
-
-      {/* Create Your Own Card */}
-      {/* <a
-        href="https://apps.apple.com/app/gogue" // Replace with your actual App Store URL
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group cursor-pointer"
-      >
-        <div className="relative aspect-square mb-3 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br bg-blue-500 flex items-center justify-center">
-          <div className="text-center text-white">            
-            <div className="text-sm font-semibold">Check out<br />more</div>
-          </div>
-        </div>
-        <h3 className="text-sm font-medium text-gray-900 text-center">
-          Download the app
-        </h3>
-      </a> */}
-      <div className="flex justify-center items-center bg-blue-100 rounded-xl">
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
-          Get early access
-        </a>
-      </div>
+      ))}    
+       <a
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
+         target="_blank"
+         rel="noopener noreferrer"
+         className="group cursor-pointer relative p-2 rounded-xl bg-blue-100"
+       >
+         <div className="relative aspect-square mb-3 rounded-xl overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+           <div className="text-center text-white">            
+             <div className="text-md lg:text-xs font-semibold">Check out<br /> more in the app</div>
+           </div>
+         </div>
+         <h3 className="text-sm font-medium text-gray-900 text-left line-clamp-2 truncate mb-2">
+           Get early access
+         </h3>
+         <div className="flex justify-between">
+           <div className="cursor-pointer">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6 text-gray-800">
+               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+             </svg>
+           </div>
+           <div className='flex-row items-center px-2 py-1 rounded-full bg-blue-200'>
+             <div className='text-gray-800 text-xs'>Free</div>
+           </div>
+         </div>
+       </a>
     </div>
   );
 };
