@@ -73,7 +73,7 @@ export default async function Home() {
           {/* Text Content - Left */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Turn any topic into a <span className="text-blue-500 whitespace-nowrap">10-minute</span> audio lecture
+              Turn any topic into a <span className="text-blue-500 whitespace-nowrap">AI powered</span> audio lecture
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
               The internet has all the information you need. Gogue transforms it into personalized audio lectures you can learn from anywhere.
@@ -161,7 +161,7 @@ export default async function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Get your lecture</h3>
-              <p className="text-gray-600">AI creates a personalized 15-minute audio lecture using the best information from the web.</p>
+              <p className="text-gray-600">AI creates a personalized 10-minute audio lecture using the best information from the web.</p>
             </div>
             <div className="p-6 md:pt-0">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
