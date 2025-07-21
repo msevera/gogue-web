@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gogue - expand your knowledge in 15 minutes.",
-  description: "AI-powered audio micro-lectures, each lasting 5 to 10 minutes. Users can interact with lectures in real time—interrupting to ask questions, explore sub-topics, create side notes, pause, rewind, and more.",
+  title: "Gogue - Turn any topic into a AI powered audio lecture.",
+  description: "The internet has all the information you need. Gogue transforms it into personalized audio lectures you can learn from anywhere.",
 };
 
 export default function RootLayout({

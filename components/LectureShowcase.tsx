@@ -1,16 +1,8 @@
 'use client';
 import { Lecture } from '@/types';
+import { formatTime } from '@/utils/utils';
 import Image from "next/image";
 import { useState, useEffect } from "react";
-
-function formatTime(seconds: number, munutesOnly?: boolean) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = Math.floor(seconds % 60);
-  if (munutesOnly) {   
-    return `${minutes + 1}`;
-  }
-  return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-}
 
 // Type guard for HLS instances
 function isHlsInstance(obj: unknown): obj is { destroy: () => void } {
