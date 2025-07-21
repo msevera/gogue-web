@@ -73,7 +73,7 @@ export default async function Home() {
           {/* Text Content - Left */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Turn any topic into a <span className="text-blue-500 whitespace-nowrap">15-minute</span> audio lecture
+              Turn any topic into a <span className="text-blue-500 whitespace-nowrap">10-minute</span> audio lecture
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
               The internet has all the information you need. Gogue transforms it into personalized audio lectures you can learn from anywhere.
@@ -92,7 +92,7 @@ export default async function Home() {
           <div className="flex-shrink-0">
             <div className="relative w-[340px] h-[550px]">
               {/* Background Phone - Left */}
-              <div className="absolute bottom-0 left-0 w-[195px] h-[400px] bg-black rounded-[30px] p-2 shadow-xl  transform z-30">
+              <div className="absolute bottom-0 left-0 w-[195px] h-[400px] bg-black rounded-[30px] p-2 shadow-xl transform z-30">
                 <div className="w-full h-full bg-gray-900 rounded-[24px] overflow-hidden">
                   <Image
                     src="/phone/preview-screen.png"
@@ -179,13 +179,13 @@ export default async function Home() {
         <div className="bg-gray-50 rounded-3xl p-8 md:p-12 mb-16">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            The internet is full of knowledge. Learning from it should be simple.
+              The internet is full of knowledge. Learning from it should be simple.
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Millions of articles and videos exist—but who has time to sift through it all?
-Gogue turns complex info into short, personalized audio lessons you can absorb anywhere.
+              Millions of articles and videos exist—but who has time to sift through it all?
+              Gogue turns complex info into short, personalized audio lessons you can absorb anywhere.
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-8 text-left">
               <div className="bg-white rounded-2xl p-8">
                 <div className="flex items-start gap-4 mb-6">
@@ -206,11 +206,13 @@ Gogue turns complex info into short, personalized audio lessons you can absorb a
                 </div>
               </div>
 
-              <div className="bg-blue-500 rounded-2xl p-8 text-white shadow-lg">
+              <div className="bg-blue-500 rounded-2xl p-8 text-white">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#3b82f6" viewBox="0 0 512 512" className="w-5 h-5 text-red-600">
+                      <path d="M208,512,155.62,372.38,16,320l139.62-52.38L208,128l52.38,139.62L400,320,260.38,372.38Z" />
+                      <path d="M88,176,64.43,111.57,0,88,64.43,64.43,88,0l23.57,64.43L176,88l-64.43,23.57Z" />
+                      <path d="M400,256l-31.11-80.89L288,144l80.89-31.11L400,32l31.11,80.89L512,144l-80.89,31.11Z" />
                     </svg>
                   </div>
                   <div>
@@ -230,7 +232,7 @@ Gogue turns complex info into short, personalized audio lessons you can absorb a
 
         {/* CTA */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to learn anything in 15 minutes?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to learn anything in 10 minutes?</h2>
           <p className="text-lg text-gray-600 mb-8">Join others learning faster with Gogue</p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
