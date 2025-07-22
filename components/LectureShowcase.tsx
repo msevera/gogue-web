@@ -27,8 +27,6 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
   }, [hlsInstances]);
 
   const handlePlayPause = async (lectureId: string, streamUrl: string) => {
-    console.log('handlePlayPause', lectureId, streamUrl);
-
     // Stop currently playing audio
     if (currentlyPlaying && currentlyPlaying !== lectureId) {
       const currentAudio = audioElements[currentlyPlaying];
@@ -136,13 +134,9 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
             >
               <div className="cursor-pointer">
                 {currentlyPlaying === lecture.id ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="5 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6 text-gray-800">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><g className="nc-icon-wrapper" fill="#221F1F"><rect x="2" y="2" width="5" height="14" rx="1.75" ry="1.75"></rect><rect x="11" y="2" width="5" height="14" rx="1.75" ry="1.75" data-color="color-2"></rect></g></svg>
                 ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="5 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6 text-gray-800">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 5v14l11-7z" />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><g className="nc-icon-wrapper" fill="#221F1F"><path d="M15.1,7.478L5.608,2.222c-.553-.306-1.206-.297-1.749,.023-.538,.317-.859,.877-.859,1.499V14.256c0,.622,.321,1.182,.859,1.499,.279,.164,.586,.247,.895,.247,.293,0,.586-.075,.854-.223l9.491-5.256c.556-.307,.901-.891,.901-1.522s-.345-1.215-.9-1.522Z"></path></g></svg>
                 )}
               </div>
             </button>
@@ -171,9 +165,42 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
          </h3>
          <div className="flex justify-between">
            <div className="cursor-pointer">
-             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6 text-gray-800">
-               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-             </svg>
+           <svg width="19px" height="19px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+             <title>ionicons-v5-k</title>
+             <path
+               d="M384,224V408a40,40,0,0,1-40,40H104a40,40,0,0,1-40-40V168a40,40,0,0,1,40-40H271.48"
+               style={{
+                 fill: "none",
+                 stroke: "#000000",
+                 strokeLinecap: "round",
+                 strokeLinejoin: "round",
+                 strokeWidth: 32
+               }}
+             />
+             <polyline
+               points="336 64 448 64 448 176"
+               style={{
+                 fill: "none",
+                 stroke: "#000000",
+                 strokeLinecap: "round",
+                 strokeLinejoin: "round",
+                 strokeWidth: 32
+               }}
+             />
+             <line
+               x1="224"
+               y1="288"
+               x2="440"
+               y2="72"
+               style={{
+                 fill: "none",
+                 stroke: "#000000",
+                 strokeLinecap: "round",
+                 strokeLinejoin: "round",
+                 strokeWidth: 32
+               }}
+             />
+           </svg>
            </div>
            <div className='flex-row items-center px-2 py-1 rounded-full bg-blue-200'>
              <div className='text-gray-800 text-xs'>Free</div>

@@ -72,7 +72,7 @@ export default async function Home() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-16">
           {/* Text Content - Left */}
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
               Turn any topic into an <span className="text-blue-500 whitespace-nowrap">AI powered</span> audio lecture
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
@@ -135,7 +135,7 @@ export default async function Home() {
 
         {/* Real Lectures Section */}
         {lectures && lectures.length > 0 && (
-          <div className="text-center mb-16">
+          <div className="text-center mb-32">
             <h2 className="text-3xl font-bold text-gray-900 mb-12">Lectures created by our users</h2>
             <LectureShowcase lectures={lectures} />
           </div>
@@ -218,7 +218,7 @@ export default async function Home() {
                   <div>
                     <h3 className="text-lg font-semibold mb-3">The Gogue way</h3>
                     <ul className="space-y-2">
-                      <li>Get a complete 15-minute expert lecture</li>
+                      <li>Get a complete 10-minute expert lecture</li>
                       <li>AI curates the best information for you</li>
                       <li>Learn while doing anything, anywhere</li>
                       <li>Ask questions and get instant answers</li>
