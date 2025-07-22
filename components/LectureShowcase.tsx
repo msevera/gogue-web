@@ -111,7 +111,7 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
       {lectures.map((lecture: Lecture) => (
-        <div key={lecture.id} className="group cursor-pointer relative p-2 rounded-xl" style={{ backgroundColor: `${lecture.image?.color}66` }}>
+        <div onClick={() => handlePlayPause(lecture.id, lecture.audio?.stream)} key={lecture.id} className="group cursor-pointer relative p-2 rounded-xl" style={{ backgroundColor: `${lecture.image?.color}66` }}>
           <div className="relative aspect-square mb-3 rounded-xl overflow-hidden bg-gray-100">
             <Image
               src={lecture.image?.webp || '/placeholder-lecture.jpg'}
