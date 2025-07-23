@@ -124,7 +124,7 @@ export default async function Home() {
               <div className="absolute top-0 right-0 transform w-[250px] h-[530px] bg-black rounded-[35px] p-2 shadow-xl z-20">
                 <div className="w-full h-full bg-gray-900 rounded-[28px] overflow-hidden">
                   <Image
-                    src="/phone/home1.png"
+                    src="/phone/home1_2.png"
                     alt="Gogue App Main Screen"
                     width={216}
                     height={436}

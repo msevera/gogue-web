@@ -20,7 +20,7 @@ export function Features() {
         "Credible source verification",
         "Transparent citations"
       ],
-      image: "/phone/sources1.png",
+      image: "/phone/sources1_2.png",
       imageAlt: "Lecture details with real sources",
       layout: "left", // text on left, image on right
       hasBackground: false
@@ -34,7 +34,7 @@ export function Features() {
         "Voice or text interaction",
         "Context-aware AI assistant"
       ],
-      images: ["/phone/player1.png", "/phone/player2.png"],
+      images: ["/phone/player1.png", "/phone/player2_1.png"],
       imageAlts: ["Audio player with note taking", "AI assistant interaction"],
       layout: "right", // text on right, images on left
       hasBackground: false
@@ -48,8 +48,8 @@ export function Features() {
         "Easy access to notes",
         "Discuss your notes with AI",
       ],
-      images: ["/phone/notes1.png", "/phone/notes1.png"],
-      imageAlts: ["Notes list view", "Notes detail view"],
+      image: "/phone/notes1_2.png",
+      imageAlt: "Notes list view",
       layout: "left", // text on left, images on right
       hasBackground: false
     },
