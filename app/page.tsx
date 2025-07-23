@@ -71,8 +71,8 @@ export default async function Home() {
       </header>
 
       {/* Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 pt-16 pb-12">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-16">
+      <div className="max-w-6xl mx-auto pt-16 pb-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-16 px-4">
           {/* Text Content - Left */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
@@ -138,23 +138,25 @@ export default async function Home() {
 
         {/* Real Lectures Section */}
         {lectures && lectures.length > 0 && (
-          <div className="text-center mb-32">
+          <div className="text-center mb-32 px-4">
             <h2 className="text-3xl font-bold text-gray-900 mb-12">Lectures created by our users</h2>
             <LectureShowcase lectures={lectures} />
           </div>
         )}
 
+        {/* Features Section */}
+        <Features />  
+
         {/* How it works */}
         <HowItWorks />
 
-        {/* Features Section */}
-        <Features />
+
 
         {/* Why Gogue */}
         <WhyGogue />
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to learn anything in 10 minutes?</h2>
           <p className="text-lg text-gray-600 mb-8">Join others learning faster with Gogue</p>
           <a

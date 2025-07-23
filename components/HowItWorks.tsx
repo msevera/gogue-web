@@ -1,6 +1,6 @@
 export function HowItWorks() {
   return (
-    <div className="text-center mb-16">
+    <div className="text-center mb-16 px-4">
       <h2 className="text-3xl font-bold text-gray-900 mb-12">How it works</h2>
       <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <div className="p-6 md:pt-0">
