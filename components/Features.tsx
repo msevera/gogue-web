@@ -46,7 +46,7 @@ export function Features() {
       features: [
         "Automatic organization",
         "Easy access to notes",
-        "Cross-lecture connections"
+        "Discuss your notes with AI",
       ],
       images: ["/phone/notes1.png", "/phone/notes1.png"],
       imageAlts: ["Notes list view", "Notes detail view"],
