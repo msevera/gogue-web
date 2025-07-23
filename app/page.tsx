@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { Lecture } from "@/types";
 import { LectureShowcase } from "@/components/LectureShowcase";
+import { Features } from "@/components/Features";
+import { HowItWorks } from "@/components/HowItWorks";
+import { WhyGogue } from "@/components/WhyGogue";
 
 export default async function Home() {
   let lectures: Lecture[] = [];
@@ -95,7 +98,7 @@ export default async function Home() {
               <div className="absolute bottom-0 left-0 w-[195px] h-[400px] bg-black rounded-[30px] p-2 shadow-xl transform z-30">
                 <div className="w-full h-full bg-gray-900 rounded-[24px] overflow-hidden">
                   <Image
-                    src="/phone/preview-screen.png"
+                    src="/phone/preview1.png"
                     alt="Gogue App Screen 1"
                     width={176}
                     height={356}
@@ -121,7 +124,7 @@ export default async function Home() {
               <div className="absolute top-0 right-0 transform w-[250px] h-[530px] bg-black rounded-[35px] p-2 shadow-xl z-20">
                 <div className="w-full h-full bg-gray-900 rounded-[28px] overflow-hidden">
                   <Image
-                    src="/phone/home-screen.png"
+                    src="/phone/home1.png"
                     alt="Gogue App Main Screen"
                     width={216}
                     height={436}
@@ -142,93 +145,13 @@ export default async function Home() {
         )}
 
         {/* How it works */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">How it works</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="p-6 md:pt-0">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3.75 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.016 0c.85.493 1.508 1.333 1.508 2.316V18" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Choose any topic</h3>
-              <p className="text-gray-600">Enter anything you want to learn about. From quantum physics to cooking techniques.</p>
-            </div>
-            <div className="p-6 md:pt-0">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.531V19.94a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Get your lecture</h3>
-              <p className="text-gray-600">AI creates a personalized 10-minute audio lecture using the best information from the web.</p>
-            </div>
-            <div className="p-6 md:pt-0">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Learn & interact</h3>
-              <p className="text-gray-600">Listen anywhere, take notes, and ask the AI tutor questions in real-time.</p>
-            </div>
-          </div>
-        </div>
+        <HowItWorks />
+
+        {/* Features Section */}
+        <Features />
 
         {/* Why Gogue */}
-        <div className="bg-gray-50 rounded-3xl p-8 md:p-12 mb-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              The internet is full of knowledge. Learning from it should be simple.
-            </h2>
-            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-              Millions of articles and videos exist—but who has time to sift through it all?
-              Gogue turns complex info into short, personalized audio lessons you can absorb anywhere.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              <div className="bg-white rounded-2xl p-8">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-red-600">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">The old way</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>Spend hours researching across multiple sources</li>
-                      <li>Get overwhelmed by information scatter</li>
-                      <li>Need dedicated quiet time to focus</li>
-                      <li>Generic content that may not stick</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-blue-500 rounded-2xl p-8 text-white">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#3b82f6" viewBox="0 0 512 512" className="w-5 h-5 text-red-600">
-                      <path d="M208,512,155.62,372.38,16,320l139.62-52.38L208,128l52.38,139.62L400,320,260.38,372.38Z" />
-                      <path d="M88,176,64.43,111.57,0,88,64.43,64.43,88,0l23.57,64.43L176,88l-64.43,23.57Z" />
-                      <path d="M400,256l-31.11-80.89L288,144l80.89-31.11L400,32l31.11,80.89L512,144l-80.89,31.11Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-3">The Gogue way</h3>
-                    <ul className="space-y-2">
-                      <li>Get a complete 10-minute expert lecture</li>
-                      <li>AI curates the best information for you</li>
-                      <li>Learn while doing anything, anywhere</li>
-                      <li>Ask questions and get instant answers</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <WhyGogue />
 
         {/* CTA */}
         <div className="text-center">
