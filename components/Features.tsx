@@ -42,7 +42,7 @@ export function Features() {
     {
       id: 3,
       title: "All your notes in one place",
-      description: "Never lose track of your learning progress. All your lecture notes are automatically organized and searchable, making it easy to review and build on your knowledge.",
+      description: "Never lose track of your learning progress. All your lecture notes are automatically organized, making it easy to review and build on your knowledge.",
       features: [
         "Automatic organization",
         "Easy access to notes",
