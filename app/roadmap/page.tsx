@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Gogue - Product Roadmap.",
+  description: "Our journey to revolutionize learning through AI-powered lectures and courses.",
+};
 
 export default function Roadmap() {
   const currentFeatures = [
@@ -17,8 +23,8 @@ export default function Roadmap() {
 
   const partIFeatures = [
     "Enhanced AI content generation for more engaging and diverse lectures",
-    "Upload your own documents, videos, and audio files as lecture sources", 
-    "Public and private lectures", 
+    "Upload your own documents, videos, and audio files as lecture sources",
+    "Public and private lectures",
     "Rate and provide feedback to help improve lecture quality",
     "Public launch with freemium subscription plans for everyone"
   ];
@@ -57,7 +63,7 @@ export default function Roadmap() {
             Product Roadmap
           </h1>
           <p className="text-xl text-gray-600">
-            Our journey to revolutionize learning through AI-powered audio lectures
+            Our journey to revolutionize learning through AI-powered lectures and courses
           </p>
         </div>
 
@@ -65,7 +71,7 @@ export default function Roadmap() {
         <div className="relative max-w-2xl mx-auto">
           {/* Vertical Line */}
           <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
-          
+
           {/* Current Features - iOS App */}
           <div className="relative mb-16">
             <div className="flex items-start gap-6">
@@ -78,7 +84,7 @@ export default function Roadmap() {
                   <span className="px-3 py-1 bg-blue-100 text-blue-500 text-sm font-semibold rounded-full self-start sm:self-auto">TESTFLIGHT BETA</span>
                 </div>
                 <p className="text-gray-600 mb-6">Currently available in TestFlight beta with comprehensive learning features</p>
-                
+
                 <div className="grid gap-3">
                   {currentFeatures.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
@@ -100,15 +106,15 @@ export default function Roadmap() {
                 I
               </div>
               <div className="flex-1 pt-2">
-                                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-                    <h2 className="text-2xl font-bold text-gray-900">Part I - Next Steps</h2>
-                    <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full self-start sm:self-auto">PUBLIC LAUNCH</span>
-                  </div>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                  <h2 className="text-2xl font-bold text-gray-900">Part I - Next Steps</h2>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full self-start sm:self-auto">PUBLIC LAUNCH</span>
+                </div>
                 <p className="text-gray-600 mb-6">Planned enhancements and public launch preparation</p>
-                
+
                 <div className="grid gap-3">
                   {partIFeatures.map((feature, index) => (
-                                         <div key={index} className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-blue-100">
+                    <div key={index} className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-blue-100">
                       <div className="flex items-center justify-center w-5 h-5 border border-blue-300 border-dashed bg-white text-blue-400 rounded-full text-xs font-bold flex-shrink-0 mt-0.5">
                         {index + 1}
                       </div>
@@ -127,15 +133,15 @@ export default function Roadmap() {
                 II
               </div>
               <div className="flex-1 pt-2">
-                                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-                    <h2 className="text-2xl font-bold text-gray-900">Part II - Future Vision</h2>
-                    <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full self-start sm:self-auto">PLANNED</span>
-                  </div>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                  <h2 className="text-2xl font-bold text-gray-900">Part II - Future Vision</h2>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full self-start sm:self-auto">PLANNED</span>
+                </div>
                 <p className="text-gray-600 mb-6">Future revolutionary learning experiences and course creation</p>
-                
+
                 <div className="grid gap-3">
                   {partIIFeatures.map((feature, index) => (
-                                         <div key={index} className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-blue-100">
+                    <div key={index} className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-blue-100">
                       <div className="flex items-center justify-center w-5 h-5 border border-blue-300 border-dashed bg-white text-blue-400 rounded-full text-xs font-bold flex-shrink-0 mt-0.5">
                         {index + 1}
                       </div>
