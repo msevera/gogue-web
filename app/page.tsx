@@ -59,14 +59,22 @@ export default async function Home() {
           <div className="flex items-center gap-3">
             <Image src="/logo.svg" alt="Gogue" width={120} height={32} />
           </div>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="lg:hidden inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            Get early access
-          </a>
+          <div className="flex items-center gap-4 md:gap-6">
+            <a
+              href="/roadmap"
+              className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm md:text-base"
+            >
+              Roadmap
+            </a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex md:hidden items-center px-3 py-2 md:px-4 md:py-2 bg-blue-500 text-white text-xs md:text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Get access
+            </a>
+          </div>
         </div>
       </header>
 
