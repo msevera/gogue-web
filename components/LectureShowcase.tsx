@@ -3,6 +3,7 @@ import { Lecture } from '@/types';
 import { formatTime } from '@/utils/utils';
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
 // Type guard for HLS instances
 function isHlsInstance(obj: unknown): obj is { destroy: () => void } {
@@ -149,10 +150,9 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
           </div>
         </div>
       ))}    
-       <a
-         href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-         target="_blank"
-         rel="noopener noreferrer"
+       <EarlyAccessButton
+         location="lecture_showcase"
+         element="showcase_cta_card"
          className="group cursor-pointer relative p-2 rounded-xl bg-blue-100"
        >
          <div className="relative aspect-square mb-3 rounded-xl overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
@@ -206,7 +206,7 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
              <div className='text-gray-800 text-xs'>Free</div>
            </div>
          </div>
-       </a>
+       </EarlyAccessButton>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from 'next';
+import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
 export const metadata: Metadata = {
   title: "Gogue - Product Roadmap.",
@@ -158,14 +159,13 @@ export default function Roadmap() {
         <div className="text-center mt-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Want to be part of our journey?</h3>
           <p className="text-gray-600 mb-8">Get early access and help shape the future of learning</p>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-            target="_blank"
-            rel="noopener noreferrer"
+          <EarlyAccessButton
+            location="roadmap_page"
+            element="roadmap_cta_button"
             className="inline-flex items-center px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Get early access
-          </a>
+          </EarlyAccessButton>
         </div>
       </div>
     </div>

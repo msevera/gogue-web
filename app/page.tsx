@@ -4,6 +4,7 @@ import { LectureShowcase } from "@/components/LectureShowcase";
 import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhyGogue } from "@/components/WhyGogue";
+import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
 export default async function Home() {
   let lectures: Lecture[] = [];
@@ -66,14 +67,13 @@ export default async function Home() {
             >
               Roadmap
             </a>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex md:hidden items-center px-3 py-2 md:px-4 md:py-2 bg-blue-500 text-white text-xs md:text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            <EarlyAccessButton
+              location="header"
+              element="mobile_access_button"
+              className="inline-flex lg:hidden items-center px-3 py-2 md:px-4 md:py-2 bg-blue-500 text-white text-xs md:text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Get access
-            </a>
+            </EarlyAccessButton>
           </div>
         </div>
       </header>
@@ -89,14 +89,13 @@ export default async function Home() {
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
               The internet has all the information you need. Gogue transforms it into personalized audio lectures you can learn from anywhere.
             </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-              target="_blank"
-              rel="noopener noreferrer"
+            <EarlyAccessButton
+              location="hero_section"
+              element="hero_cta_button"
               className="hidden lg:inline-flex items-center px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Get early access
-            </a>
+            </EarlyAccessButton>
           </div>
 
           {/* iPhone Demo Composition - Right */}
@@ -167,14 +166,13 @@ export default async function Home() {
         <div className="text-center px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to learn anything in 10 minutes?</h2>
           <p className="text-lg text-gray-600 mb-8">Join others learning faster with Gogue</p>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-            target="_blank"
-            rel="noopener noreferrer"
+          <EarlyAccessButton
+            location="bottom_cta"
+            element="final_cta_button"
             className="inline-flex items-center px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Get early access
-          </a>
+          </EarlyAccessButton>
         </div>
       </div>
     </div>

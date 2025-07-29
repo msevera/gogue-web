@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Lecture } from "@/types";
+import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 import { Metadata, ResolvingMetadata } from 'next';
 import { formatTime } from '@/utils/utils';
 
@@ -111,14 +112,13 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
               <Image src="/logo.svg" alt="Gogue" width={120} height={32} />
             </Link>
           </div>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-            target="_blank"
-            rel="noopener noreferrer"
+          <EarlyAccessButton
+            location="lecture_header"
+            element="lecture_header_button"
             className="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Get early access
-          </a>
+          </EarlyAccessButton>
         </div>
       </header>
 
@@ -193,14 +193,13 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
               <p className="mb-6 opacity-90">
                 Get early access to Gogue and start creating personalized audio lectures on any topic you want to learn about.
               </p>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
-                target="_blank"
-                rel="noopener noreferrer"
+              <EarlyAccessButton
+                location="lecture_cta"
+                element="lecture_cta_button"
                 className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-full hover:bg-gray-100 transition-colors"
               >
                 Get early access
-              </a>
+              </EarlyAccessButton>
             </div>
           </div>
         </div>
