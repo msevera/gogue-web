@@ -165,19 +165,62 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
             />
             {/* Lecture Details with Tabs */}
             <LectureDetails lecture={lecture} />
-            {/* Call to Action */}
-            <div className="bg-blue-500 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3">Want to explore other lectures or create yours?</h3>
-              <p className="mb-6 opacity-90">
-                Get early access to Gogue and start creating personalized audio lectures on any topic you want to learn about.
-              </p>
-              <EarlyAccessButton
-                location="lecture_cta"
-                element="lecture_cta_button"
-                className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-full hover:bg-gray-100 transition-colors"
-              >
-                Get early access
-              </EarlyAccessButton>
+            
+            {/* Combined Call to Action */}
+            <div 
+              className="rounded-2xl p-8 text-white"
+              style={{
+                background: `linear-gradient(to bottom right, #3b82f6, ${lecture.image?.color || '#8b5cf6'})`
+              }}
+            >
+              <div className="space-y-6">
+                {/* Ask AI Section */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/20 rounded-full p-3 flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2">Ask Anything About This Lecture</h3>
+                    <p className="text-white/90 mb-4 leading-relaxed">
+                      Discuss this lecture and ask related questions with our AI assistant. Get deeper insights and clarify concepts.
+                    </p>
+                    <EarlyAccessButton
+                      location="lecture_ask_ai"
+                      element="lecture_ask_ai_button"
+                      className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-full hover:bg-gray-100 transition-colors mr-4 mb-4"
+                    >
+                      Start AI Discussion
+                    </EarlyAccessButton>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-white/20"></div>
+
+                {/* Explore More Section */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/20 rounded-full p-3 flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2">Want to explore other lectures or create yours?</h3>
+                    <p className="text-white/90 mb-4 leading-relaxed">
+                      Get early access to Gogue and start creating personalized audio lectures on any topic you want to learn about.
+                    </p>
+                    <EarlyAccessButton
+                      location="lecture_cta"
+                      element="lecture_cta_button"
+                      className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-full hover:bg-gray-100 transition-colors"
+                    >
+                      Get early access
+                    </EarlyAccessButton>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
