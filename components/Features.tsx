@@ -171,7 +171,7 @@ export function Features() {
   };
 
   return (
-    <div className="mb-32 px-0 md:px-4">
+    <div className="mb-32 px-4">
       <div className="bg-gray-50 rounded-none md:rounded-3xl py-8 md:py-12">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}

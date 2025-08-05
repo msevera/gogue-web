@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Lecture } from "@/types";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 import { Metadata, ResolvingMetadata } from 'next';
-import { formatTime } from '@/utils/utils';
+import { Player } from "@/components/Player";
+import { LectureDetails } from '@/components/LectureDetails';
 
 type Props = {
   params: Promise<{ id: string }>
@@ -35,10 +36,15 @@ const loadLecture = async (id: string) => {
               color
             }
             sections {                  
+              title
+              overview
+            }  
+            research {     
               annotations {
                 title
+                url
               }
-            }                       
+            }                      
           }    
         }`,
         variables: {
@@ -82,7 +88,6 @@ export async function generateMetadata(
 export default async function LecturePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const lecture = await loadLecture(id);
-  console.log('lecture', lecture);
   if (!lecture) {
     return (
       <div className="min-h-screen bg-white">
@@ -127,8 +132,8 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Lecture Image */}
           <div className="space-y-6">
-            <div 
-              className="relative aspect-square rounded-3xl overflow-hidden"
+            <div
+              className="relative aspect-square rounded-3xl overflow-hidden group cursor-pointer"
               style={{ backgroundColor: `${lecture.image?.color}66` }}
             >
               <Image
@@ -143,7 +148,7 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
           </div>
 
           {/* Right Column - Lecture Details */}
-          <div className="space-y-8">           
+          <div className="space-y-8">
             {/* Title */}
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -155,41 +160,14 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
                 </p>
               )}
             </div>
-
-            {/* Overview Section */}
-            <div 
-              className="bg-gray-50 rounded-2xl p-6"
-              style={{ backgroundColor: `${lecture.image?.color}20` }}
-            >
-              <div className="mb-4 flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-gray-900">Overview</h3>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex items-center gap-2 px-3 py-1 rounded-full text-xs text-gray-700"
-                    style={{ backgroundColor: `${lecture.image?.color}30` }}>
-                    Created from {lecture.sections?.length || 0} sources
-                  </div>
-                  <div
-                    className="flex items-center gap-1 px-3 py-1 rounded-full text-xs text-gray-700"
-                    style={{ backgroundColor: `${lecture.image?.color}30` }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                    {formatTime(lecture?.audio?.duration || 0, true)}min
-                  </div>
-                </div>
-              </div>                           
-              
-              <div className="text-gray-700 leading-relaxed">
-                {lecture.overview || "This lecture covers key concepts and insights about " + lecture.topic.toLowerCase() + ", gathered from the best sources on the web."}
-              </div>
-            </div>
-
- 
-
+            <Player
+              audioStream={lecture.audio?.stream}
+            />
+            {/* Lecture Details with Tabs */}
+            <LectureDetails lecture={lecture} />
             {/* Call to Action */}
             <div className="bg-blue-500 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3">Want to listen to this lecture or create yours?</h3>
+              <h3 className="text-xl font-bold mb-3">Want to explore other lectures or create yours?</h3>
               <p className="mb-6 opacity-90">
                 Get early access to Gogue and start creating personalized audio lectures on any topic you want to learn about.
               </p>
@@ -204,6 +182,9 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
           </div>
         </div>
       </div>
+      {/* <div className="max-w-6xl mx-auto">       
+        <Features />
+      </div> */}
     </div>
   );
 }

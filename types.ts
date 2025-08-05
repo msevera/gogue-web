@@ -11,9 +11,15 @@ export interface LectureAudio {
 
 export interface LectureAnnotation {
   title: string;
+  url: string;
 }
 
 export interface LectureSection {
+  title: string;
+  overview: string;
+}
+
+export interface LectureResearch {
   annotations: LectureAnnotation[];
 }
 
@@ -25,4 +31,5 @@ export interface Lecture {
   audio: LectureAudio;
   image: LectureImage;
   sections?: LectureSection[];
+  research?: LectureResearch;
 }

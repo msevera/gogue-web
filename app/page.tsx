@@ -157,8 +157,6 @@ export default async function Home() {
         {/* How it works */}
         <HowItWorks />
 
-
-
         {/* Why Gogue */}
         <WhyGogue />
 
