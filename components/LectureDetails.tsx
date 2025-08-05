@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Lecture } from '@/types';
 import { EarlyAccessButton } from './EarlyAccessButton';
-import { trackTabSelection, trackAIDiscussionClick } from '@/utils/analytics';
+import { trackTabSelection } from '@/utils/analytics';
 
 interface LectureDetailsProps {
   lecture: Lecture;
@@ -20,10 +20,7 @@ export function LectureDetails({ lecture }: LectureDetailsProps) {
     trackTabSelection(lecture.id, lecture.title, tabId);
   };
 
-  // Track AI discussion clicks
-  const handleAIDiscussionClick = () => {
-    trackAIDiscussionClick(lecture.id, lecture.title, 'lecture_workbook');
-  };
+
 
   // Gather all annotations from the research array with unique URLs
   const annotations = useMemo(() => {

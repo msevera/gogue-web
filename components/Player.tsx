@@ -15,6 +15,7 @@ interface PlayerProps {
 }
 
 export const Player = ({ audioStream, lectureId, lectureTitle }: PlayerProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const playerRef = useRef<any>(null);
   const lastProgressTime = useRef<number>(0);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
