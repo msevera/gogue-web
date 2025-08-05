@@ -2,7 +2,8 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { Lecture } from '@/types';
-import { EarlyAccessButton } from './EarlyAccessButton';
+import { NotesAccessButton } from './NotesAccessButton';
+import { WorkbookAccessButton } from './WorkbookAccessButton';
 import { trackTabSelection } from '@/utils/analytics';
 
 interface LectureDetailsProps {
@@ -166,13 +167,14 @@ export function LectureDetails({ lecture }: LectureDetailsProps) {
                 Get a personalized workbook with audio, exercises and practice problems tailored to this lecture. Enhance your learning with interactive content.
               </p>
             </div>
-            <EarlyAccessButton
+            <WorkbookAccessButton
+              lectureId={lecture.id}
+              lectureTitle={lecture.title}
               location="lecture_workbook"
-              element="lecture_workbook_button"
               className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors"
             >
               Get early access to workbook
-            </EarlyAccessButton>
+            </WorkbookAccessButton>
           </div>
         )}
 
@@ -184,13 +186,14 @@ export function LectureDetails({ lecture }: LectureDetailsProps) {
                 Take notes while listening to enhance your learning experience. Get early access to unlock this feature.
               </p>
             </div>
-            <EarlyAccessButton
+            <NotesAccessButton
+              lectureId={lecture.id}
+              lectureTitle={lecture.title}
               location="lecture_notes"
-              element="lecture_notes_button"
               className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors"
             >
               Get early access to take notes
-            </EarlyAccessButton>
+            </NotesAccessButton>
           </div>
         )}
       </div>

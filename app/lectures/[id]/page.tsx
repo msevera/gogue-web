@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Lecture } from "@/types";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
+import { AIDiscussionButton } from "@/components/AIDiscussionButton";
 import { Metadata, ResolvingMetadata } from 'next';
 import { Player } from "@/components/Player";
 import { LectureDetails } from '@/components/LectureDetails';
@@ -191,13 +192,14 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
                     <p className="text-white/90 mb-4 leading-relaxed">
                       Discuss this lecture and ask related questions with our AI assistant. Get deeper insights and clarify concepts.
                     </p>
-                    <EarlyAccessButton
+                    <AIDiscussionButton
+                      lectureId={lecture.id}
+                      lectureTitle={lecture.title}
                       location="lecture_ask_ai"
-                      element="lecture_ask_ai_button"
                       className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-full hover:bg-gray-100 transition-colors mr-4 mb-4"
                     >
                       Start AI Discussion
-                    </EarlyAccessButton>
+                    </AIDiscussionButton>
                   </div>
                 </div>
 
