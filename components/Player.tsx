@@ -4,33 +4,31 @@ import { trackAudioPlay, trackAudioPause, trackAudioProgress } from '@/utils/ana
 
 // Import the new dependencies for media-chrome
 import HlsVideo from 'hls-video-element/react';
+import type { HlsVideoElement } from 'hls-video-element';
 import 'media-chrome/react';
 import 'media-chrome/react/menu';
 import { MediaTheme } from 'media-chrome/react/media-theme';
 
 interface PlayerProps {
   audioStream?: string;
-  playbackId?: string;
   className?: string;
   lectureId?: string;
   lectureTitle?: string;
-  envKey?: string;
   color?: string;
 }
 
 export const Player = ({
-  audioStream,
-  playbackId,
+  audioStream,  
   lectureId,
   lectureTitle,
-  envKey,
   className,
   color
 }: PlayerProps) => {
-  const playerRef = useRef<HTMLAudioElement>(null);
+  const playerRef = useRef<HlsVideoElement>(null);
   const lastProgressTime = useRef<number>(0);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const isPlayingRef = useRef<boolean>(false);
+  const [templateElement, setTemplateElement] = React.useState<HTMLTemplateElement | null>(null);
 
   const handlePlay = useCallback(() => {
     if (lectureId && lectureTitle) {
@@ -86,6 +84,14 @@ export const Player = ({
         clearInterval(progressIntervalRef.current);
       }
     };
+  }, []);
+
+  // Set template element after component mounts
+  useEffect(() => {
+    const template = document.getElementById('media-theme-tailwind-audio') as HTMLTemplateElement;
+    if (template) {
+      setTemplateElement(template);
+    }
   }, []);
 
   // Construct the HLS URL from playbackId if needed
@@ -328,25 +334,27 @@ export const Player = ({
               </media-controller>` }}
           />
 
-          <MediaTheme
-            template="media-theme-tailwind-audio"
-            style={{
-              width: "100%",
-              "--media-accent-color": "#45556c",
-              "--media-secondary-color": `${color}20`
-            }}
-          >
-            <HlsVideo
-              ref={playerRef}
-              slot="media"
-              src={hlsUrl}
-              playsInline
-              crossOrigin="anonymous"
-              onPlay={handlePlay}
-              onPause={handlePause}
-              onEnded={handleEnded}
-            />
-          </MediaTheme>
+          {templateElement && (
+            <MediaTheme
+              template={templateElement}
+              style={{
+                width: "100%",
+                "--media-accent-color": "#45556c",
+                "--media-secondary-color": `${color}20`
+              } as React.CSSProperties}
+            >
+              <HlsVideo
+                ref={playerRef}
+                slot="media"
+                src={hlsUrl}
+                playsInline
+                crossOrigin="anonymous"
+                onPlay={handlePlay}
+                onPause={handlePause}
+                onEnded={handleEnded}
+              />
+            </MediaTheme>
+          )}
         </>
       )}
     </div>
