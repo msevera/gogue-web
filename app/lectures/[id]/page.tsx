@@ -5,6 +5,7 @@ import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 import { Metadata, ResolvingMetadata } from 'next';
 import { Player } from "@/components/Player";
 import { LectureDetails } from '@/components/LectureDetails';
+import { trackAIDiscussionClick } from '@/utils/analytics';
 
 type Props = {
   params: Promise<{ id: string }>
@@ -107,6 +108,11 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
     );
   }
 
+  // Track AI discussion click handler
+  const handleAIDiscussionClick = () => {
+    trackAIDiscussionClick(lecture.id, lecture.title, 'lecture_ask_ai');
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -162,6 +168,8 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
             </div>
             <Player
               audioStream={lecture.audio?.stream}
+              lectureId={lecture.id}
+              lectureTitle={lecture.title}
             />
             {/* Lecture Details with Tabs */}
             <LectureDetails lecture={lecture} />

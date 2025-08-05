@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Lecture } from '@/types';
 import { EarlyAccessButton } from './EarlyAccessButton';
+import { trackTabSelection, trackAIDiscussionClick } from '@/utils/analytics';
 
 interface LectureDetailsProps {
   lecture: Lecture;
@@ -12,6 +13,17 @@ type Tab = 'overview' | 'sections' | 'sources' | 'workbook' | 'notes';
 
 export function LectureDetails({ lecture }: LectureDetailsProps) {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
+
+  // Track tab selection
+  const handleTabClick = (tabId: Tab) => {
+    setActiveTab(tabId);
+    trackTabSelection(lecture.id, lecture.title, tabId);
+  };
+
+  // Track AI discussion clicks
+  const handleAIDiscussionClick = () => {
+    trackAIDiscussionClick(lecture.id, lecture.title, 'lecture_workbook');
+  };
 
   // Gather all annotations from the research array with unique URLs
   const annotations = useMemo(() => {
@@ -70,7 +82,7 @@ export function LectureDetails({ lecture }: LectureDetailsProps) {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => handleTabClick(tab.id)}
               className={`cursor-pointer px-4 sm:px-6 py-4 text-sm transition-colors whitespace-nowrap flex-shrink-0 ${
                 tab.id === 'sources' ? 'hidden sm:flex' : ''
               } ${activeTab === tab.id
