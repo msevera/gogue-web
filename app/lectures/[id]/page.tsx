@@ -168,6 +168,7 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
               audioStream={lecture.audio?.stream}
               lectureId={lecture.id}
               lectureTitle={lecture.title}
+              color={lecture.image?.color}
             />
             {/* Lecture Details with Tabs */}
             <LectureDetails lecture={lecture} />

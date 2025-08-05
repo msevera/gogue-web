@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mux/mux-audio": "^0.15.11",
     "@vercel/analytics": "^1.5.0",
+    "hls-video-element": "^1.0.0",
+    "media-chrome": "^4.0.0",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
