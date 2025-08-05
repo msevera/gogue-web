@@ -272,8 +272,7 @@ export const Player = ({
                       --media-range-bar-color: var(--media-accent-color, rgb(79 70 229));
                       --media-range-track-border-radius: 4px;
                       --media-range-track-height: 0.5rem;
-                      --media-range-thumb-background: var(--media-accent-color, rgb(79 70 229));
-                      --media-range-thumb-box-shadow: 0 0 0 2px var(--media-secondary-color, rgb(255 255 255 / 0.9));
+                      --media-range-thumb-background: var(--media-accent-color, rgb(79 70 229));                      
                       --media-range-thumb-width: 0.25rem;
                       --media-range-thumb-height: 1rem;
                       --media-preview-time-text-shadow: transparent;
@@ -333,7 +332,7 @@ export const Player = ({
             template="media-theme-tailwind-audio"
             style={{
               width: "100%",
-              "--media-accent-color": "oklch(62.3% 0.214 259.815)",
+              "--media-accent-color": "#45556c",
               "--media-secondary-color": `${color}20`
             }}
           >
