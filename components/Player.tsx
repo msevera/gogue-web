@@ -18,7 +18,7 @@ interface PlayerProps {
 }
 
 export const Player = ({
-  audioStream,  
+  audioStream,
   lectureId,
   lectureTitle,
   className,
@@ -204,7 +204,7 @@ export const Player = ({
                 <slot name="media" slot="media"></slot>
     
                 <media-time-range
-                  class="hidden block @md:hidden w-full h-2 min-h-0 p-0 bg-slate-50 focus-visible:ring-slate-700 focus-visible:ring-2"
+                  class="hidden w-full h-2 min-h-0 p-0 bg-slate-50 focus-visible:ring-slate-700 focus-visible:ring-2"
                   style="
                     --media-range-track-background: transparent;
                     --media-time-range-buffered-color: rgb(0 0 0 / 0.02);
@@ -271,9 +271,9 @@ export const Player = ({
                   ></media-time-display>
     
                   <media-time-range
-                    class="block h-2 min-h-0 p-0 m-2 rounded-md bg-slate-50 focus-visible:ring-slate-700 focus-visible:ring-2"
+                    class="block h-2 min-h-0 p-0 m-2 rounded-md bg-slate-0 focus-visible:ring-slate-700 focus-visible:ring-2"
                     style="
-                      --media-range-track-background: transparent;
+                      --media-range-track-background: white;
                       --media-time-buffered-color: rgb(0 0 0 / 0.02);
                       --media-range-bar-color: var(--media-accent-color, rgb(79 70 229));
                       --media-range-track-border-radius: 4px;
