@@ -35,6 +35,7 @@ export interface Source {
   title: string;
   authors: string[];
   image: SourceImage;
+  topic: string;
 }
 
 export interface Lecture {
