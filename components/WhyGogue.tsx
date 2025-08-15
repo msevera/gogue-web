@@ -4,11 +4,10 @@ export function WhyGogue() {
       <div className="bg-gray-50 rounded-3xl p-8 md:p-12 mb-16">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            The internet is full of knowledge. Learning from it should be simple.
+            The knowledge is out there—finding it should be easy.
           </h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Millions of articles and videos exist—but who has time to sift through it all?
-            Gogue turns complex info into short, personalized audio lessons you can absorb anywhere.
+          Books hold the answers, but pulling out what’s relevant takes time you don’t have. Gogue transforms your chosen book into a short, tailored audio lesson—focused on solving your specific challenge, ready to learn anywhere.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 text-left">
@@ -22,10 +21,10 @@ export function WhyGogue() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">The old way</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>Spend hours researching across multiple sources</li>
-                    <li>Get overwhelmed by information scatter</li>
-                    <li>Need dedicated quiet time to focus</li>
-                    <li>Generic content that may not stick</li>
+                    <li>Hours lost researching across sources</li>
+                    <li>Overwhelmed by scattered information</li>
+                    <li>Need quiet time to focus</li>
+                    <li>Generic content that doesn’t stick</li>
                   </ul>
                 </div>
               </div>
@@ -43,10 +42,10 @@ export function WhyGogue() {
                 <div>
                   <h3 className="text-lg font-semibold mb-3">The Gogue way</h3>
                   <ul className="space-y-2">
-                    <li>Get a complete 10-minute expert lecture</li>
-                    <li>AI curates the best information for you</li>
-                    <li>Learn while doing anything, anywhere</li>
-                    <li>Ask questions and get instant answers</li>
+                    <li>10-minute expert lecture, tailored to you</li>
+                    <li>AI curates only what matters</li>
+                    <li>Learn anytime, anywhere</li>
+                    <li>Ask questions, get instant answers</li>
                   </ul>
                 </div>
               </div>

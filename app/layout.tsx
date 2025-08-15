@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gogue - Turn any topic into a AI powered audio lecture.",
-  description: "The internet has all the information you need. Gogue transforms it into personalized audio lectures you can learn from anywhere.",
+  title: "Gogue - Book-powered solutions for fast-moving leaders.",
+  description: "From problem to solution in minutes—we turn world's best books into a focused audio lessons for leaders who need results fast.",
 };
 
 export default function RootLayout({

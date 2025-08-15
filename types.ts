@@ -23,6 +23,20 @@ export interface LectureResearch {
   annotations: LectureAnnotation[];
 }
 
+export interface SourceImage {
+  url: string;
+  color: string;
+  width?: number;
+  height?: number;
+}
+
+export interface Source {
+  id: string;
+  title: string;
+  authors: string[];
+  image: SourceImage;
+}
+
 export interface Lecture {
   id: string;
   topic: string;
@@ -32,4 +46,5 @@ export interface Lecture {
   image: LectureImage;
   sections?: LectureSection[];
   research?: LectureResearch;
+  source?: Source;
 }

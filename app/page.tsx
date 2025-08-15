@@ -5,6 +5,7 @@ import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhyGogue } from "@/components/WhyGogue";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
+import { AnimatedText } from "@/components/AnimatedText";
 
 export default async function Home() {
   let lectures: Lecture[] = [];
@@ -84,10 +85,22 @@ export default async function Home() {
           {/* Text Content - Left */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
-              Turn any topic into an <span className="text-blue-500 whitespace-nowrap">AI powered</span> audio lecture
+              {/* Turn books into <AnimatedText phrases={["goal-focused", "problem-focused", "topic-focused"]} className="text-blue-500 whitespace-nowrap" /> audio lessons */}
+              {/* <span className='whitespace-nowrap'>Turn books into <AnimatedText phrases={["goal-focused", "topic-focused"]} className="text-blue-500 whitespace-nowrap" /></span> audio lessons */}
+              {/* <span className='whitespace-nowrap'>Turn <AnimatedText phrases={["goals", "problems"]} className="text-blue-500 whitespace-nowrap" /> + book =</span> <span className='whitespace-nowrap'>actionable solution</span> */}
+              <AnimatedText
+                sentences={[
+                 'Stuck on a product problem?',
+                 'Roadmap chaos?',
+                 'Problem with\r\ngrowth?',
+                 'Strategy feels\r\nfuzzy?',
+                 'Team issues?'
+                ]}
+                // className="whitespace-nowrap"
+              />
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              The internet has all the information you need. Gogue transforms it into personalized audio lectures you can learn from anywhere.
+              State your problem, select a book, and get a tailored audio lecture you can apply immediately.
             </p>
             <EarlyAccessButton
               location="hero_section"
@@ -152,7 +165,7 @@ export default async function Home() {
         )}
 
         {/* Features Section */}
-        <Features />  
+        <Features />
 
         {/* How it works */}
         <HowItWorks />
@@ -162,8 +175,8 @@ export default async function Home() {
 
         {/* CTA */}
         <div className="text-center px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to learn anything in 10 minutes?</h2>
-          <p className="text-lg text-gray-600 mb-8">Join others learning faster with Gogue</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to solve your problems?</h2>
+          <p className="text-lg text-gray-600 mb-8">Join PMs, founders, and product leaders learning faster with Gogue.</p>
           <EarlyAccessButton
             location="bottom_cta"
             element="final_cta_button"

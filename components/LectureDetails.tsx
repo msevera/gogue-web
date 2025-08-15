@@ -99,7 +99,7 @@ export function LectureDetails({ lecture }: LectureDetailsProps) {
       </div>
 
       {/* Tab Content */}
-      <div className="p-6 max-h-[300px] overflow-y-auto">
+      <div className="p-6 max-h-[320px] overflow-y-auto">
         {activeTab === 'overview' && (
           <div className="text-gray-700 leading-relaxed">
             {lecture.overview || "This lecture covers key concepts and insights about " + lecture.topic?.toLowerCase() + ", gathered from the best sources on the web."}

@@ -6,6 +6,7 @@ import { AIDiscussionButton } from "@/components/AIDiscussionButton";
 import { Metadata, ResolvingMetadata } from 'next';
 import { Player } from "@/components/Player";
 import { LectureDetails } from '@/components/LectureDetails';
+import Source from '@/components/Source';
 
 
 type Props = {
@@ -46,7 +47,20 @@ const loadLecture = async (id: string) => {
                 title
                 url
               }
-            }                      
+            }    
+            source {
+              id    
+              title  
+              overview    
+              topic  
+              image {
+                url
+                color
+                width
+                height
+              }      
+              authors      
+            }                  
           }    
         }`,
         variables: {
@@ -164,17 +178,28 @@ export default async function LecturePage({ params }: { params: Promise<{ id: st
                 </p>
               )}
             </div>
-            <Player
-              audioStream={lecture.audio?.stream}
-              lectureId={lecture.id}
-              lectureTitle={lecture.title}
-              color={lecture.image?.color}
-            />
-            {/* Lecture Details with Tabs */}
-            <LectureDetails lecture={lecture} />
-            
+            {
+              lecture.source && (
+                <div>
+                  <Source source={lecture.source} />
+                </div>
+              )
+            }
+            <div>
+              <Player
+                audioStream={lecture.audio?.stream}
+                lectureId={lecture.id}
+                lectureTitle={lecture.title}
+                color={lecture.image?.color}
+              />
+            </div>
+            <div>
+              {/* Lecture Details with Tabs */}
+              <LectureDetails lecture={lecture} />
+            </div>
+
             {/* Combined Call to Action */}
-            <div 
+            <div
               className="rounded-2xl p-8 text-white"
               style={{
                 background: `linear-gradient(to bottom right, #3b82f6, ${lecture.image?.color || '#8b5cf6'})`

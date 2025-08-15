@@ -13,9 +13,10 @@ export function Features() {
   const slides = [
     {
       id: 1,
-      title: "Built on real, credible sources",
-      description: "Every lecture is carefully crafted using verified information from trusted sources across the web. See exactly where your knowledge comes from with transparent source citations.",
+      title: "Built on credible books & sources",
+      description: "Every lecture is tailored to the book you choose, enriched with verified insights from trusted sources—complete with transparent citations you can check yourself.",
       features: [
+        "Book-based core content",
         "Real-time web research",
         "Credible source verification",
         "Transparent citations"
@@ -53,20 +54,20 @@ export function Features() {
       layout: "left", // text on left, images on right
       hasBackground: false
     },
-    {
-      id: 4,
-      title: "Daily glimpses of knowledge",
-      description: "Discover fascinating facts and insights about your areas of interest every day. Glimpses keeps you engaged with bite-sized knowledge that sparks curiosity and expands your learning journey.",
-      features: [
-        "Personalized daily facts",
-        "Category-based insights",
-        "Engaging micro-learning"
-      ],
-      images: ["/phone/glimpses2.png", "/phone/glimpses1.png"],
-      imageAlts: ["Daily glimpses feature", "Glimpses detail view"],
-      layout: "right", // text on right, images on left
-      hasBackground: false
-    }
+    // {
+    //   id: 4,
+    //   title: "Daily glimpses of knowledge",
+    //   description: "Discover fascinating facts and insights about your areas of interest every day. Glimpses keeps you engaged with bite-sized knowledge that sparks curiosity and expands your learning journey.",
+    //   features: [
+    //     "Personalized daily facts",
+    //     "Category-based insights",
+    //     "Engaging micro-learning"
+    //   ],
+    //   images: ["/phone/glimpses2.png", "/phone/glimpses1.png"],
+    //   imageAlts: ["Daily glimpses feature", "Glimpses detail view"],
+    //   layout: "right", // text on right, images on left
+    //   hasBackground: false
+    // }
   ];
 
   const renderSlideContent = (slide: typeof slides[0]) => {
