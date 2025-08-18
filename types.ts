@@ -40,6 +40,7 @@ export interface Source {
 
 export interface Lecture {
   id: string;
+  slug: string;
   topic: string;
   title: string;
   overview?: string;

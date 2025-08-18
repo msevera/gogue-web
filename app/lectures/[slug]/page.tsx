@@ -10,11 +10,11 @@ import Source from '@/components/Source';
 
 
 type Props = {
-  params: Promise<{ id: string }>
+  params: Promise<{ slug: string }>
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-const loadLecture = async (id: string) => {
+const loadLecture = async (slug: string) => {
   let lecture: Lecture | null = null;
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/graphql`, {
@@ -24,9 +24,10 @@ const loadLecture = async (id: string) => {
         'cache-control': 'no-store',
       },
       body: JSON.stringify({
-        query: `query GetLectureDetails($id: ID!) {
-          lecture(id: $id) {
+        query: `query GetLectureDetails($slug: String!) {
+          lectureBySlug(slug: $slug) {
             id
+            slug
             topic
             title    
             overview
@@ -64,13 +65,13 @@ const loadLecture = async (id: string) => {
           }    
         }`,
         variables: {
-          id
+          slug
         },
       }),
     });
 
     const { data } = await response.json();
-    lecture = data?.lecture;
+    lecture = data?.lectureBySlug;
   } catch (error) {
     console.error('Error fetching lectures:', error);
   }
@@ -83,10 +84,10 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const { id } = await params
+  const { slug } = await params
 
   // fetch data
-  const lecture = await loadLecture(id);
+  const lecture = await loadLecture(slug);
 
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || []
@@ -101,9 +102,9 @@ export async function generateMetadata(
 }
 
 
-export default async function LecturePage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const lecture = await loadLecture(id);
+export default async function LecturePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const lecture = await loadLecture(slug);
   if (!lecture) {
     return (
       <div className="min-h-screen bg-white">

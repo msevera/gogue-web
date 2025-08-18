@@ -21,6 +21,7 @@ export default async function Home() {
           lectures(input: $input, pagination: $pagination) {
             items {
                 id
+                slug
                 topic
                 title    
                 audio {
