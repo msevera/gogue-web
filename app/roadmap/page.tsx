@@ -17,13 +17,14 @@ export default function Roadmap() {
     "Access all your lecture notes in one organized, searchable drawer",
     "Chat with AI about the content at any moment during playback",
     "Review and continue previous AI conversations anytime",
-    "Save lectures to your personal library for easy access",
-    "Discover daily curated facts (Glimpses) tailored to your interests",
-    "Share your favorite lectures with friends and colleagues"
+    "Save lectures to your personal library for easy access",    
+    "Share your favorite lectures with friends and colleagues",
+    "Select credible non-fiction book as the foundation for your lecture"
   ];
 
   const partIFeatures = [
     "Enhanced AI content generation for more engaging and diverse lectures",
+    "Discover daily curated facts (Glimpses) tailored to your interests",
     "Upload your own documents, videos, and audio files as lecture sources",
     "Public and private lectures",
     "Rate and provide feedback to help improve lecture quality",

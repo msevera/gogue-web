@@ -65,7 +65,7 @@ export default async function Home() {
           <div className="flex items-center gap-4 md:gap-6">
             <a
               href="/roadmap"
-              className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm md:text-base"
+              className="hidden md:block text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm md:text-base"
             >
               Roadmap
             </a>
@@ -74,7 +74,7 @@ export default async function Home() {
               element="mobile_access_button"
               className="inline-flex lg:hidden items-center px-3 py-2 md:px-4 md:py-2 bg-blue-500 text-white text-xs md:text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Get access
+              Get early access
             </EarlyAccessButton>
           </div>
         </div>
