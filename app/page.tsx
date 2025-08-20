@@ -119,7 +119,7 @@ export default async function Home() {
               <div className="absolute bottom-0 left-0 w-[195px] h-[400px] bg-black rounded-[30px] p-2 shadow-xl transform z-30">
                 <div className="w-full h-full bg-gray-900 rounded-[24px] overflow-hidden">
                   <Image
-                    src="/phone/preview1.png"
+                    src="/phone/preview1_2.png"
                     alt="Gogue App Screen 1"
                     width={176}
                     height={356}
@@ -145,7 +145,7 @@ export default async function Home() {
               <div className="absolute top-0 right-0 transform w-[250px] h-[530px] bg-black rounded-[35px] p-2 shadow-xl z-20">
                 <div className="w-full h-full bg-gray-900 rounded-[28px] overflow-hidden">
                   <Image
-                    src="/phone/home1_2.png"
+                    src="/phone/personalize_1.png"
                     alt="Gogue App Main Screen"
                     width={216}
                     height={436}

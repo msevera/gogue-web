@@ -21,7 +21,7 @@ export function Features() {
         "Credible source verification",
         "Transparent citations"
       ],
-      image: "/phone/sources1_2.png",
+      image: "/phone/sources1_3.png",
       imageAlt: "Lecture details with real sources",
       layout: "left", // text on left, image on right
       hasBackground: false
