@@ -3,11 +3,9 @@ import { getMongoDb, type EarlyAccessSubmission } from "@/utils/mongodb";
 import { cookies } from "next/headers";
 import { Analytics } from '@segment/analytics-node'
 
-
-const analytics = new Analytics({ writeKey: process.env.SEGMENT_WRITE_KEY || '' })
-
 export async function POST(request: Request) {
   try {
+    const analytics = new Analytics({ writeKey: process.env.SEGMENT_WRITE_KEY || '' })
     const { email, name, role, platform, topic } = await request.json();
 
     if (!email || !name || !role || !platform) {
