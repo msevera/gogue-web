@@ -17,7 +17,7 @@ export function NotesAccessButton({
   location,
   className = "",
   children,
-  href = "https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
+  href = "/early-access"
 }: NotesAccessButtonProps) {
   const handleClick = () => {
     trackNotesAccessClick(lectureId, lectureTitle, location);
@@ -26,8 +26,6 @@ export function NotesAccessButton({
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       className={className}
       onClick={handleClick}
     >

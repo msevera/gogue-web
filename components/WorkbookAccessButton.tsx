@@ -17,7 +17,7 @@ export function WorkbookAccessButton({
   location,
   className = "",
   children,
-  href = "https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
+  href = "/early-access"
 }: WorkbookAccessButtonProps) {
   const handleClick = () => {
     trackWorkbookAccessClick(lectureId, lectureTitle, location);
@@ -26,8 +26,6 @@ export function WorkbookAccessButton({
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       className={className}
       onClick={handleClick}
     >

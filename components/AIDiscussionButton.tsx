@@ -17,7 +17,7 @@ export function AIDiscussionButton({
   location,
   className = "",
   children,
-  href = "https://docs.google.com/forms/d/e/1FAIpQLSfm22rOLcPKyxMFlCI2OGCIcJbjeNDaHVI8Prp76AW0D0Wpnw/viewform?usp=dialog"
+  href = "/early-access"
 }: AIDiscussionButtonProps) {
   const handleClick = () => {
     trackAIDiscussionClick(lectureId, lectureTitle, location);
@@ -26,8 +26,6 @@ export function AIDiscussionButton({
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       className={className}
       onClick={handleClick}
     >
