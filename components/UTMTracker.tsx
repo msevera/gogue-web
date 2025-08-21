@@ -58,7 +58,7 @@ export default function UTMTracker() {
 
     try {
       setCookie("utm_params", JSON.stringify(utmData), 60 * 60 * 24 * 90); // 90 days
-    } catch (_) {
+    } catch {
       // ignore cookie write errors
     }
   }, []);

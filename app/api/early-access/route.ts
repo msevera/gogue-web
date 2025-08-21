@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { getMongoDb, type EarlyAccessSubmission } from "@/utils/mongodb";
 import { cookies } from "next/headers";
+import { Analytics } from '@segment/analytics-node'
+
+
+const analytics = new Analytics({ writeKey: process.env.SEGMENT_WRITE_KEY || '' })
 
 export async function POST(request: Request) {
   try {
@@ -25,7 +29,7 @@ export async function POST(request: Request) {
       if (utmCookieValue) {
         utm = JSON.parse(utmCookieValue);
       }
-    } catch (e) {
+    } catch {
       // ignore malformed cookies
     }
 
@@ -42,6 +46,19 @@ export async function POST(request: Request) {
     };
 
     await db.collection<EarlyAccessSubmission>(collectionName).insertOne(submission);
+
+    await analytics.track({
+      anonymousId: email,
+      event: 'early_access_submitted',
+      properties: {
+        email,
+        name,
+        role,
+        platform,
+        topic,
+        utm
+      }
+    });
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {

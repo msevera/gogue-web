@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EarlyAccessConfirmationPage() {
   return (
@@ -6,17 +7,17 @@ export default function EarlyAccessConfirmationPage() {
       <header className="border-b border-gray-100 border">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <a href="/">
+            <Link href="/">
               <Image src="/logo.svg" alt="Gogue" width={120} height={32} />
-            </a>
+            </Link>
           </div>
           <div className="flex items-center gap-4 md:gap-6">
-            <a
+            <Link
               href="/roadmap"
               className="hidden md:block text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm md:text-base"
             >
               Roadmap
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -27,12 +28,12 @@ export default function EarlyAccessConfirmationPage() {
           Thanks for signing up for early access to Gogue. Invitations will be sent out soon — we can’t wait for you to try it.
         </p>
         <div className="mt-10">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors"
           >
             Back to home
-          </a>
+          </Link>
         </div>
       </main>
     </div>

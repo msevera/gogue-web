@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { useRouter } from "next/navigation";
 
@@ -26,7 +27,6 @@ export default function EarlyAccessPage() {
   const [platform, setPlatform] = useState<PlatformOption | "">("");
   const [topic, setTopic] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const otherRoleInputRef = useRef<HTMLInputElement | null>(null);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
@@ -83,8 +83,9 @@ export default function EarlyAccessPage() {
       }
       track("early_access_submitted", { platform, role: resolvedRole || "" });
       router.push("/early-access/confirmation");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong.";
+      setError(message);
     } finally {
       setSubmitting(false);
     }
@@ -95,17 +96,17 @@ export default function EarlyAccessPage() {
       <header className="border-b border-gray-100 border">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <a href="/">
+            <Link href="/">
               <Image src="/logo.svg" alt="Gogue" width={120} height={32} />
-            </a>
+            </Link>
           </div>
           <div className="flex items-center gap-4 md:gap-6">
-            <a
+            <Link
               href="/roadmap"
               className="hidden md:block text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm md:text-base"
             >
               Roadmap
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -118,12 +119,6 @@ export default function EarlyAccessPage() {
         <p className="text-xs text-gray-400 mb-8">
           Fields marked with <span className="text-red-500" aria-hidden="true">*</span> are required.
         </p>
-
-        {submitted && (
-          <div className="mb-6 rounded-md border border-green-200 bg-green-50 text-green-800 p-4">
-            Thanks! We received your request. We’ll be in touch shortly.
-          </div>
-        )}
         {error && (
           <div className="mb-6 rounded-md border border-red-200 bg-red-50 text-red-800 p-4">
             {error}
