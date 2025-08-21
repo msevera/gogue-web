@@ -6,7 +6,6 @@ import { Analytics } from '@segment/analytics-node'
 export async function POST(request: Request) {
   try {
     const analytics = new Analytics({ writeKey: process.env.SEGMENT_WRITE_KEY || '' })
-    console.log("SEGMENT_WRITE_KEY", process.env.SEGMENT_WRITE_KEY);
     const { email, name, role, platform, topic } = await request.json();
 
     if (!email || !name || !role || !platform) {
@@ -58,6 +57,8 @@ export async function POST(request: Request) {
         utm
       }
     });
+
+    await analytics.flush();
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {
