@@ -192,7 +192,7 @@ export default function EarlyAccessPage() {
               ] as RoleOption[]).map((option, index) => (
                 <label
                   key={option}
-                  className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 ${
+                  className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 min-h-[46px] md:min-h-0 ${
                     role === option ? "border-blue-500 bg-blue-50" : "border-gray-200"
                   }`}
                 >
@@ -210,7 +210,7 @@ export default function EarlyAccessPage() {
               ))}
 
               <label
-                className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 ${
+                className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 min-h-[46px] md:min-h-0 ${
                   role === "Other" ? "border-blue-500 bg-blue-50" : "border-gray-200"
                 }`}
               >
@@ -262,7 +262,7 @@ export default function EarlyAccessPage() {
               {(["iOS", "Android"] as PlatformOption[]).map((option) => (
                 <label
                   key={option}
-                  className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 ${
+                  className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 min-h-[46] md:min-h-0 ${
                     platform === option ? "border-blue-500 bg-blue-50" : "border-gray-200"
                   }`}
                 >
@@ -296,7 +296,7 @@ export default function EarlyAccessPage() {
           <button
             type="submit"
             disabled={!isFormValid || submitting}
-            className="inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-600 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full md:w-auto inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-600 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {submitting ? "Submitting..." : "Request access"}
           </button>
