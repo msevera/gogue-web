@@ -31,6 +31,7 @@ export default function EarlyAccessPage() {
   const otherRoleInputRef = useRef<HTMLInputElement | null>(null);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
+  const [roleError, setRoleError] = useState<string | null>(null);
 
   const resolvedRole = useMemo(() => {
     return role === "Other" ? customRole.trim() : role;
@@ -42,10 +43,10 @@ export default function EarlyAccessPage() {
     return (
       email.trim().length > 0 &&
       name.trim().length > 1 &&
-      Boolean(resolvedRole && resolvedRole.length > 1) &&
+      Boolean(role) &&
       Boolean(platform)
     );
-  }, [email, name, resolvedRole, platform]);
+  }, [email, name, role, platform]);
 
   useEffect(() => {
     if (role === "Other" && otherRoleInputRef.current) {
@@ -62,6 +63,14 @@ export default function EarlyAccessPage() {
       setEmailError("Please enter a valid email address.");
       if (emailInputRef.current) {
         emailInputRef.current.focus();
+      }
+      return;
+    }
+    // Validate custom role only when Other is selected
+    if (role === "Other" && customRole.trim().length === 0) {
+      setRoleError("Please enter your role.");
+      if (otherRoleInputRef.current) {
+        otherRoleInputRef.current.focus();
       }
       return;
     }
@@ -219,15 +228,28 @@ export default function EarlyAccessPage() {
                 <div />
               )}
               {role === "Other" && (
-                <input
-                  type="text"
-                  value={customRole}
-                  onChange={(e) => setCustomRole(e.target.value)}
-                  required
-                  placeholder="Enter your role"
-                  ref={otherRoleInputRef}
-                  className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 text-black"
-                />
+                <div className="w-full">
+                  <input
+                    type="text"
+                    value={customRole}
+                    onChange={(e) => {
+                      setCustomRole(e.target.value);
+                      if (roleError && e.target.value.trim().length > 0) {
+                        setRoleError(null);
+                      }
+                    }}
+                    placeholder="Enter your role"
+                    ref={otherRoleInputRef}
+                    aria-invalid={roleError ? true : false}
+                    aria-describedby={roleError ? "role-error" : undefined}
+                    className={`w-full rounded-md border px-3 py-2 focus:outline-none placeholder:text-gray-400 text-black ${
+                      roleError ? "border-red-300 focus:ring-2 focus:ring-red-500" : "border-gray-200 focus:ring-2 focus:ring-blue-500"
+                    }`}
+                  />
+                  {roleError && (
+                    <p id="role-error" className="mt-1 text-sm text-red-600">{roleError}</p>
+                  )}
+                </div>
               )}
             </div>
           </div>
