@@ -143,7 +143,7 @@ export default function EarlyAccessPage() {
               ref={emailInputRef}
               aria-invalid={emailError ? true : false}
               aria-describedby={emailError ? "email-error" : undefined}
-              className={`w-full rounded-md border px-3 py-2 focus:outline-none placeholder:text-gray-400 ${
+              className={`w-full rounded-md border px-3 py-2 focus:outline-none placeholder:text-gray-400 text-black ${
                 emailError ? "border-red-300 focus:ring-2 focus:ring-red-500" : "border-gray-200 focus:ring-2 focus:ring-blue-500"
               }`}
               placeholder="you@example.com"
@@ -162,7 +162,7 @@ export default function EarlyAccessPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
+              className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 text-black"
               placeholder="Jane Doe"
             />
           </div>
@@ -226,7 +226,7 @@ export default function EarlyAccessPage() {
                   required
                   placeholder="Enter your role"
                   ref={otherRoleInputRef}
-                  className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
+                  className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 text-black"
                 />
               )}
             </div>
@@ -266,7 +266,7 @@ export default function EarlyAccessPage() {
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               rows={5}
-              className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
+              className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 text-black"
               placeholder="Describe your challenge or topic..."
             />
           </div>
