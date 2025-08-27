@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function EarlyAccessConfirmationPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Script id="facebook-pixel-complete-registration" strategy="afterInteractive">
+        {`
+          fbq('track', 'CompleteRegistration');
+        `}
+      </Script>
+      <div className="min-h-screen bg-white">
       <header className="border-b border-gray-100 border">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -37,6 +44,7 @@ export default function EarlyAccessConfirmationPage() {
         </div>
       </main>
     </div>
+    </>
   );
 }
 
