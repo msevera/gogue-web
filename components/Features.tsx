@@ -179,10 +179,10 @@ export function Features() {
           spaceBetween={0}
           slidesPerView={1}
           loop
-          // autoplay={{
-          //   delay: 10000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           pagination={{
             clickable: true,
           }}
