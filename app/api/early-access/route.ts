@@ -6,9 +6,9 @@ import { Analytics } from '@segment/analytics-node'
 export async function POST(request: Request) {
   try {
     const analytics = new Analytics({ writeKey: process.env.SEGMENT_WRITE_KEY || '' })
-    const { email, name, role, platform, topic } = await request.json();
+    const { email, name, platform, topic } = await request.json();
 
-    if (!email || !name || !role || !platform) {
+    if (!email || !name || !platform) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
@@ -34,7 +34,6 @@ export async function POST(request: Request) {
     const submission: EarlyAccessSubmission = {
       email,
       name,
-      role,
       platform,
       topic,
       createdAt: new Date(),
@@ -51,7 +50,6 @@ export async function POST(request: Request) {
       properties: {
         email,
         name,
-        role,
         platform,
         topic,
         utm

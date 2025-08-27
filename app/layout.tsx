@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gogue - Book-powered solutions for fast-moving leaders.",
-  description: "From problem to solution in minutes—we turn world's best books into a focused audio lessons for leaders who need results fast.",
+  title: "Gogue - Book-powered lessons for personal growth.",
+  description: "Turn the world’s best self-growth books into focused audio lessons—personalized guidance to help you grow, reflect, and thrive in minutes.",
 };
 
 export default function RootLayout({

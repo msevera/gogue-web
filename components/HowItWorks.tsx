@@ -1,36 +1,142 @@
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import Image from 'next/image';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+const steps = [
+  {
+    number: 1,
+    title: "Set Your Growth Goal",
+    subtitle: "Define what you want to improve—confidence, productivity, focus, habits, mindset.",
+    image: "/phone/how_it_works/how_it_works_1.png"
+  },
+  {
+    number: 2,
+    title: "Select a Book",
+    subtitle: "Use your favorite self-development book or explore a recommended framework you like.",
+    image: "/phone/how_it_works/how_it_works_2.png"
+  },
+  {
+    number: 3,
+    title: "Learn, Reflect & Grow",
+    subtitle: "Listen to a personalized audio lesson, take notes, and have conversations with your AI coach.",
+    image: "/phone/how_it_works/how_it_works_3.png"
+  }
+];
+
 export function HowItWorks() {
   return (
-    <div className="text-center mb-16 px-4">
-      <h2 className="text-3xl font-bold text-gray-900 mb-12">How it works</h2>
-      <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        <div className="p-6 md:pt-0">
-          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3.75 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.016 0c.85.493 1.508 1.333 1.508 2.316V18" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">State your problem</h3>
-          <p className="text-gray-600">Describe the challenge, goal, or bottleneck—whether it’s strategy, execution, or growth.</p>
-        </div>
-        <div className="p-6 md:pt-0">
-          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.531V19.94a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Select your book</h3>
-          <p className="text-gray-600">Choose the title or framework you want as the foundation for your lecture.</p>
-        </div>
-        <div className="p-6 md:pt-0">
-          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Learn & interact</h3>
-          <p className="text-gray-600">Get a tailored audio lecture—listen anywhere, take notes, and ask AI for instant answers.</p>
-        </div>
-      </div>
+    <div className="mb-32 px-4 max-w-6xl mx-auto">
+      <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">How it works</h2>
+      
+      <Swiper
+        modules={[Pagination, Navigation]}
+        spaceBetween={30}
+        slidesPerView={1}
+        pagination={{ 
+          clickable: true,
+          el: '.swiper-pagination',
+          bulletClass: 'swiper-pagination-bullet',
+          bulletActiveClass: 'swiper-pagination-bullet-active'
+        }}
+        // navigation={{
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // }}
+        breakpoints={{
+          768: {
+            slidesPerView: 1.2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 1.5,
+            spaceBetween: 50,
+          }
+        }}
+        className="how-it-works-swiper"
+      >
+        {steps.map((step, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex items-center gap-8 h-[400px] md:h-[500px]">
+              {/* Step Number */}
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 md:w-10 md:h-10 bg-blue-400 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-xl md:text-2xl">{step.number}</span>
+                </div>
+              </div>
+              
+              {/* Image - Half visible from bottom */}
+              <div className="flex-shrink-0 relative">
+                <div className="relative w-[200px] md:w-[280px] aspect-[9/19.5]">
+                  <div className="absolute bottom-[-150px] w-full h-full rounded-[22px] overflow-hidden ring-1 ring-gray-200">
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>                  
+                </div>
+              </div>
+              
+              {/* Title and Subtitle */}
+              <div className="flex-1 pl-4 md:pl-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  {step.title}
+                </h3>
+                <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+                  {step.subtitle}
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+        
+        {/* Custom Navigation Buttons */}
+        {/* <div className="swiper-button-prev !text-blue-600 !w-12 !h-12 !bg-white !rounded-full !shadow-lg after:!text-lg"></div>
+        <div className="swiper-button-next !text-blue-600 !w-12 !h-12 !bg-white !rounded-full !shadow-lg after:!text-lg"></div> */}
+        
+        {/* Custom Pagination */}
+        <div className="swiper-pagination !bottom-4"></div>
+      </Swiper>
+      
+      <style jsx global>{`
+        .how-it-works-swiper {
+          padding-bottom: 60px;
+        }
+        
+        .swiper-pagination-bullet {
+          width: 12px;
+          height: 12px;
+          background: #d1d5db;
+          opacity: 1;
+        }
+        
+        .swiper-pagination-bullet-active {
+          background: #2563eb;
+        }
+        
+        .swiper-button-prev,
+        .swiper-button-next {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        
+        .swiper-button-prev {
+          left: 20px;
+        }
+        
+        .swiper-button-next {
+          right: 20px;
+        }
+      `}</style>
     </div>
   );
 } 

@@ -21,10 +21,10 @@ export function WhyGogue() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">The old way</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>Hours lost researching across sources</li>
-                    <li>Overwhelmed by scattered information</li>
-                    <li>Need quiet time to focus</li>
-                    <li>Generic content that doesn’t stick</li>
+                    <li>Scrolling endlessly for advice</li>
+                    <li>Info overload—no tangible plan</li>
+                    <li>Disconnected reading, scattered insights</li>
+                    <li>Learning in isolation</li>
                   </ul>
                 </div>
               </div>
@@ -42,10 +42,10 @@ export function WhyGogue() {
                 <div>
                   <h3 className="text-lg font-semibold mb-3">The Gogue way</h3>
                   <ul className="space-y-2">
-                    <li>10-minute expert lecture, tailored to you</li>
-                    <li>AI curates only what matters</li>
-                    <li>Learn anytime, anywhere</li>
-                    <li>Ask questions, get instant answers</li>
+                    <li>Short self-growth lesson focused on you</li>
+                    <li>AI distills what matters, just for your goal</li>
+                    <li>Structured lessons and reflections</li>
+                    <li>Interactive, empathetic AI companion whenever you need it</li>
                   </ul>
                 </div>
               </div>

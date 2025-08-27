@@ -1,20 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { useRouter } from "next/navigation";
-
-type RoleOption =
-  | "Founder / Entrepreneur"
-  | "Product Owner / Business Analyst"
-  | "Project / Delivery manager"
-  | "Scrum Master"
-  | "Team Lead"
-  | "Engineer / Designer"
-  | "Student"
-  | "Other";
 
 type PlatformOption = "iOS" | "Android";
 
@@ -22,20 +12,12 @@ export default function EarlyAccessPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [role, setRole] = useState<RoleOption | "">("");
-  const [customRole, setCustomRole] = useState("");
   const [platform, setPlatform] = useState<PlatformOption | "">("");
   const [topic, setTopic] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const otherRoleInputRef = useRef<HTMLInputElement | null>(null);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
-  const [roleError, setRoleError] = useState<string | null>(null);
-
-  const resolvedRole = useMemo(() => {
-    return role === "Other" ? customRole.trim() : role;
-  }, [role, customRole]);
 
   const isValidEmail = (value: string) => /[^\s@]+@[^\s@]+\.[^\s@]+/.test(value);
 
@@ -43,16 +25,9 @@ export default function EarlyAccessPage() {
     return (
       email.trim().length > 0 &&
       name.trim().length > 1 &&
-      Boolean(role) &&
       Boolean(platform)
     );
-  }, [email, name, role, platform]);
-
-  useEffect(() => {
-    if (role === "Other" && otherRoleInputRef.current) {
-      otherRoleInputRef.current.focus();
-    }
-  }, [role]);
+  }, [email, name, platform]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,14 +41,6 @@ export default function EarlyAccessPage() {
       }
       return;
     }
-    // Validate custom role only when Other is selected
-    if (role === "Other" && customRole.trim().length === 0) {
-      setRoleError("Please enter your role.");
-      if (otherRoleInputRef.current) {
-        otherRoleInputRef.current.focus();
-      }
-      return;
-    }
     setSubmitting(true);
     try {
       const response = await fetch("/api/early-access", {
@@ -82,7 +49,6 @@ export default function EarlyAccessPage() {
         body: JSON.stringify({
           email,
           name,
-          role: resolvedRole,
           platform,
           topic,
         }),
@@ -90,7 +56,7 @@ export default function EarlyAccessPage() {
       if (!response.ok) {
         throw new Error("Failed to submit. Please try again later.");
       }
-      track("early_access_submitted", { platform, role: resolvedRole || "" });
+      track("early_access_submitted", { platform });
       router.push("/early-access/confirmation");
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Something went wrong.";
@@ -174,84 +140,6 @@ export default function EarlyAccessPage() {
               className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 text-black"
               placeholder="Jane Doe"
             />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Role/Job Title <span className="text-red-500" aria-hidden="true">*</span>
-            </label>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {([
-                "Founder / Entrepreneur",
-                "Product Owner / Business Analyst",
-                "Project / Delivery manager",
-                "Scrum Master",
-                "Team Lead",
-                "Engineer / Designer",
-                "Student",
-              ] as RoleOption[]).map((option, index) => (
-                <label
-                  key={option}
-                  className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 min-h-[46px] md:min-h-0 ${
-                    role === option ? "border-blue-500 bg-blue-50" : "border-gray-200"
-                  }`}
-                >
-                  <span className="text-gray-800 text-sm md:text-base">{option}</span>
-                  <input
-                    type="radio"
-                    name="role"
-                    value={option}
-                    checked={role === option}
-                    onChange={() => setRole(option)}
-                    required={index === 0}
-                    className="h-4 w-4 text-blue-600"
-                  />
-                </label>
-              ))}
-
-              <label
-                className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 min-h-[46px] md:min-h-0 ${
-                  role === "Other" ? "border-blue-500 bg-blue-50" : "border-gray-200"
-                }`}
-              >
-                <span className="text-gray-800 text-sm md:text-base">Other</span>
-                <input
-                  type="radio"
-                  name="role"
-                  value="Other"
-                  checked={role === "Other"}
-                  onChange={() => setRole("Other")}
-                  className="h-4 w-4 text-blue-600"
-                />
-              </label>
-              {role === "Other" && (
-                <div />
-              )}
-              {role === "Other" && (
-                <div className="w-full">
-                  <input
-                    type="text"
-                    value={customRole}
-                    onChange={(e) => {
-                      setCustomRole(e.target.value);
-                      if (roleError && e.target.value.trim().length > 0) {
-                        setRoleError(null);
-                      }
-                    }}
-                    placeholder="Enter your role"
-                    ref={otherRoleInputRef}
-                    aria-invalid={roleError ? true : false}
-                    aria-describedby={roleError ? "role-error" : undefined}
-                    className={`w-full rounded-md border px-3 py-2 focus:outline-none placeholder:text-gray-400 text-black ${
-                      roleError ? "border-red-300 focus:ring-2 focus:ring-red-500" : "border-gray-200 focus:ring-2 focus:ring-blue-500"
-                    }`}
-                  />
-                  {roleError && (
-                    <p id="role-error" className="mt-1 text-sm text-red-600">{roleError}</p>
-                  )}
-                </div>
-              )}
-            </div>
           </div>
 
           <div>

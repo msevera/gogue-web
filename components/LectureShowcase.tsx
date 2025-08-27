@@ -33,7 +33,7 @@ export const LectureShowcase = ({ lectures }: { lectures: Lecture[] }) => {
               style={{
                 backgroundColor: `${lecture.image?.color}4D`,
               }}>
-              <div className='text-gray-800 text-xs'>open</div>
+              <div className='text-gray-800 text-xs'>start</div>
             </div>
             <div className='flex-row items-center px-2 py-1 rounded-full'
               style={{

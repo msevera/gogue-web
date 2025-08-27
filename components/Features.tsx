@@ -14,14 +14,14 @@ export function Features() {
     {
       id: 1,
       title: "Built on credible books & sources",
-      description: "Every lecture is tailored to the book you choose, enriched with verified insights from trusted sources—complete with transparent citations you can check yourself.",
+      description: "Each lesson draws from life-changing books and trusted resources—backed by verified research and transparent citations.",
       features: [
-        "Book-based core content",
-        "Real-time web research",
-        "Credible source verification",
-        "Transparent citations"
+        "Growth through book wisdom",
+        "Live web insights for modern context",
+        "Verified guidance you can trust",
+        "Full transparency in sources"
       ],
-      image: "/phone/sources1_3.png",
+      image: "/phone/features/feature_1.png",
       imageAlt: "Lecture details with real sources",
       layout: "left", // text on left, image on right
       hasBackground: false
@@ -29,13 +29,13 @@ export function Features() {
     {
       id: 2,
       title: "Listen, learn, and interact",
-      description: "Take notes while listening to your personalized lecture, then interact with an AI assistant that knows your content inside and out. Ask questions via text or voice anytime.",
+      description: "Engage as you learn. Listen actively, take notes, and connect your journey with our smart AI guide—ready to chat via voice or text.",
       features: [
-        "Real-time note taking",
-        "Voice or text interaction",
-        "Context-aware AI assistant"
+        "Jot reflections while you listen",
+        "Voice or text reactions welcomed",
+        "AI that understands and cares"
       ],
-      images: ["/phone/player1.png", "/phone/player2_1.png"],
+      images: ["/phone/features/feature_2.png", "/phone/features/feature_3.png"],
       imageAlts: ["Audio player with note taking", "AI assistant interaction"],
       layout: "right", // text on right, images on left
       hasBackground: false
@@ -43,13 +43,13 @@ export function Features() {
     {
       id: 3,
       title: "All your notes in one place",
-      description: "Never lose track of your learning progress. All your lecture notes are automatically organized, making it easy to review and build on your knowledge.",
+      description: "Capture your breakthroughs in one place. Gogue organizes your insights and reflections, helping you revisit progress and keep building.",
       features: [
-        "Automatic organization",
-        "Easy access to notes",
-        "Discuss your notes with AI",
+        "Automatic journaling of your lessons",
+        "Easy review and retrieval",
+        "Reflect and discuss with AI companion",
       ],
-      image: "/phone/notes1_2.png",
+      image: "/phone/features/feature_4.png",
       imageAlt: "Notes list view",
       layout: "left", // text on left, images on right
       hasBackground: false
@@ -172,17 +172,17 @@ export function Features() {
   };
 
   return (
-    <div className="mb-32 px-4">
+    <div className="mb-32 md:px-4">
       <div className="bg-gray-50 rounded-none md:rounded-3xl py-8 md:py-12">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
           loop
-          autoplay={{
-            delay: 10000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 10000,
+          //   disableOnInteraction: false,
+          // }}
           pagination={{
             clickable: true,
           }}

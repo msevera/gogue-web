@@ -8,6 +8,7 @@ interface EarlyAccessButtonProps {
   className?: string;
   children: React.ReactNode;
   href?: string;
+  ariaLabel?: string;
 }
 
 export function EarlyAccessButton({ 
@@ -15,7 +16,8 @@ export function EarlyAccessButton({
   element = "button", 
   className = "", 
   children,
-  href = "/early-access"
+  href = "/early-access",
+  ariaLabel
 }: EarlyAccessButtonProps) {
   const handleClick = () => {
     trackEarlyAccessClick(location, element);
@@ -26,6 +28,7 @@ export function EarlyAccessButton({
       href={href}
       className={className}
       onClick={handleClick}
+      aria-label={ariaLabel}
     >
       {children}
     </a>

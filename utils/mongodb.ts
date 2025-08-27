@@ -44,7 +44,6 @@ export async function getMongoDb(databaseName?: string) {
 export type EarlyAccessSubmission = {
   email: string;
   name: string;
-  role: string;
   platform: string;
   topic?: string;
   createdAt: Date;

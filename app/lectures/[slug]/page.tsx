@@ -2,10 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Lecture } from "@/types";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
-import { AIDiscussionButton } from "@/components/AIDiscussionButton";
 import { Metadata, ResolvingMetadata } from 'next';
 import { Player } from "@/components/Player";
-import { LectureDetails } from '@/components/LectureDetails';
 import Source from '@/components/Source';
 
 
@@ -194,20 +192,43 @@ export default async function LecturePage({ params }: { params: Promise<{ slug: 
                 color={lecture.image?.color}
               />
             </div>
-            <div>
-              {/* Lecture Details with Tabs */}
+            {/* <div>
               <LectureDetails lecture={lecture} />
-            </div>
+            </div> */}
 
             {/* Combined Call to Action */}
             <div
-              className="rounded-2xl p-8 text-white"
-              style={{
-                background: `linear-gradient(to bottom right, #3b82f6, ${lecture.image?.color || '#8b5cf6'})`
-              }}
+              className="rounded-2xl p-8 text-white bg-blue-500"
+            // style={{
+            //   background: `linear-gradient(to bottom right, #3b82f6, ${lecture.image?.color || '#8b5cf6'})`
+            // }}
             >
               <div className="space-y-6">
-                {/* Ask AI Section */}
+                {/* Explore More Section */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/20 rounded-full p-3 flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2">Create your own growth journey</h3>
+                    <p className="text-white/90 mb-4 leading-relaxed">
+                      Get early access to Gogue and create personalized audio lessons designed around your goals.
+                    </p>
+                    <EarlyAccessButton
+                      location="lecture_cta"
+                      element="lecture_cta_button"
+                      className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-full hover:bg-gray-100 transition-colors"
+                    >
+                      Unlock Early Access
+                    </EarlyAccessButton>
+                  </div>
+                </div>
+
+
+                {/* <div className="border-t border-white/20"></div>
+                
                 <div className="flex items-start gap-4">
                   <div className="bg-white/20 rounded-full p-3 flex-shrink-0">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,32 +249,8 @@ export default async function LecturePage({ params }: { params: Promise<{ slug: 
                       Start AI Discussion
                     </AIDiscussionButton>
                   </div>
-                </div>
+                </div> */}
 
-                {/* Divider */}
-                <div className="border-t border-white/20"></div>
-
-                {/* Explore More Section */}
-                <div className="flex items-start gap-4">
-                  <div className="bg-white/20 rounded-full p-3 flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-2">Want to explore other lectures or create yours?</h3>
-                    <p className="text-white/90 mb-4 leading-relaxed">
-                      Get early access to Gogue and start creating personalized audio lectures on any topic you want to learn about.
-                    </p>
-                    <EarlyAccessButton
-                      location="lecture_cta"
-                      element="lecture_cta_button"
-                      className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-full hover:bg-gray-100 transition-colors"
-                    >
-                      Get early access
-                    </EarlyAccessButton>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
