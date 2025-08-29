@@ -87,10 +87,10 @@ export default function EarlyAccessPage() {
       </header>
 
       <main className="max-w-2xl mx-auto px-4 py-10">
-        <h1 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">Get Early Access</h1>
+        <h1 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">Apply for Early Access to Gogue AI</h1>
         <p className="text-gray-500 mb-2 text-sm md:text-base">
-          Tell us a bit about you so we can get you into the beta and tailor the experience.
-        </p>
+        We&apos;re letting in a limited number of users as we shape the experience. Tell us a bit about you so we can tailor your access and get you started on the right path.
+        </p>            
         <p className="text-xs text-gray-400 mb-8">
           Fields marked with <span className="text-red-500" aria-hidden="true">*</span> are required.
         </p>
@@ -118,9 +118,8 @@ export default function EarlyAccessPage() {
               ref={emailInputRef}
               aria-invalid={emailError ? true : false}
               aria-describedby={emailError ? "email-error" : undefined}
-              className={`w-full rounded-md border px-3 py-2 focus:outline-none placeholder:text-gray-400 text-black ${
-                emailError ? "border-red-300 focus:ring-2 focus:ring-red-500" : "border-gray-200 focus:ring-2 focus:ring-blue-500"
-              }`}
+              className={`w-full rounded-md border px-3 py-2 focus:outline-none placeholder:text-gray-400 text-black ${emailError ? "border-red-300 focus:ring-2 focus:ring-red-500" : "border-gray-200 focus:ring-2 focus:ring-blue-500"
+                }`}
               placeholder="you@example.com"
             />
             {emailError && (
@@ -150,9 +149,8 @@ export default function EarlyAccessPage() {
               {(["iOS", "Android"] as PlatformOption[]).map((option) => (
                 <label
                   key={option}
-                  className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 min-h-[46] md:min-h-0 ${
-                    platform === option ? "border-blue-500 bg-blue-50" : "border-gray-200"
-                  }`}
+                  className={`flex items-center justify-between rounded-md border px-3 py-2 cursor-pointer transition-colors hover:bg-gray-50 min-h-[46] md:min-h-0 ${platform === option ? "border-blue-500 bg-blue-50" : "border-gray-200"
+                    }`}
                 >
                   <span className="text-gray-800">{option}</span>
                   <input
@@ -177,7 +175,7 @@ export default function EarlyAccessPage() {
               onChange={(e) => setTopic(e.target.value)}
               rows={5}
               className="w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 text-black"
-              placeholder="Describe your challenge or topic..."
+              placeholder="e.g. stress, focus, procrastination, imposter syndrome…"
             />
           </div>
 
@@ -186,8 +184,12 @@ export default function EarlyAccessPage() {
             disabled={!isFormValid || submitting}
             className="w-full md:w-auto inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-600 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {submitting ? "Submitting..." : "Request access"}
+            {submitting ? "Submitting..." : "Get My Early Access"}
           </button>
+          
+          <p className="text-xs text-gray-500 text-center mt-3">
+            👉 Free to join • Limited early spots available
+          </p>
         </form>
       </main>
     </div>
