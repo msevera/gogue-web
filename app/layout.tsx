@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gogue - Book-powered lessons for personal growth.",
+  title: "Gogue - AI-powered lessons for personal growth.",
   description: "Turn the world’s best self-growth books into focused audio lessons—personalized guidance to help you grow, reflect, and thrive in minutes.",
 };
 

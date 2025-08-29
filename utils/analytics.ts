@@ -14,6 +14,18 @@ const gtag = (command: string, targetId: string, config?: any) => {
   }
 };
 
+// Track forms ubmitted
+export const trackFormSubmitted = () => {
+  console.log('📊 Tracking form_submitted');
+  
+  track("early_access_submitted");
+
+   // Also track with Google Analytics
+   gtag('event', 'early_access_submitted', {
+    event_category: 'engagement'
+  });
+};
+
 // Existing Vercel Analytics function
 export const trackEarlyAccessClick = (location: string, element: string) => {
   console.log('📊 Tracking early_access_click:', { location, element });

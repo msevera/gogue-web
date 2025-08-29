@@ -3,8 +3,8 @@
 import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { track } from "@vercel/analytics";
 import { useRouter } from "next/navigation";
+import { trackFormSubmitted } from '@/utils/analytics';
 
 type PlatformOption = "iOS" | "Android";
 
@@ -56,7 +56,7 @@ export default function EarlyAccessPage() {
       if (!response.ok) {
         throw new Error("Failed to submit. Please try again later.");
       }
-      track("early_access_submitted", { platform });
+      trackFormSubmitted();
       router.push("/early-access/confirmation");
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Something went wrong.";
