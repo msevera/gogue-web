@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PrivacyPolicy() {
   return (
@@ -7,23 +8,23 @@ export default function PrivacyPolicy() {
       <header className="border-b border-gray-100 border">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <a href="/">
+            <Link href="/">
               <Image src="/logo.svg" alt="Gogue" width={120} height={32} className="w-20 h-6 md:w-[120px] md:h-8" />
-            </a>
+            </Link>
           </div>
           <div className="flex items-center gap-4 md:gap-6">
-            <a
+            <Link
               href="/roadmap"
               className="block text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm md:text-base"
             >
               Roadmap
-            </a>
-            <a
+            </Link>
+            <Link
               href="/support"
               className="block text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm md:text-base"
             >
               Support
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -39,11 +40,11 @@ export default function PrivacyPolicy() {
           </div>
 
           <p className="text-lg text-gray-700 mb-8">
-            Welcome to Gogue ("we," "our," "us").
+            Welcome to Gogue (&ldquo;we,&rdquo; &ldquo;our,&rdquo; &ldquo;us&rdquo;).
           </p>
 
           <p className="text-lg text-gray-700 mb-8">
-            Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our mobile application ("App") and website <a href="https://gogue.ai" className="text-blue-500 hover:text-blue-600">https://gogue.ai</a> (collectively, the "Services").
+            Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our mobile application (&ldquo;App&rdquo;) and website <a href="https://gogue.ai" className="text-blue-500 hover:text-blue-600">https://gogue.ai</a> (collectively, the &ldquo;Services&rdquo;).
           </p>
 
           <p className="text-lg text-gray-700 mb-8">
@@ -147,7 +148,7 @@ export default function PrivacyPolicy() {
             If you are a California resident, you have the right to:
           </p>
           <ul className="list-disc pl-6 mb-6 text-lg text-gray-700 space-y-2">
-            <li>Know what personal information we collect and how it's used</li>
+            <li>Know what personal information we collect and how it&rsquo;s used</li>
             <li>Request deletion of your personal data</li>
             <li>Opt out of the sale or sharing of your information (we do not sell data)</li>
             <li>Be free from discrimination for exercising these rights</li>
@@ -159,7 +160,7 @@ export default function PrivacyPolicy() {
             No method of transmission over the internet is completely secure, but we take all reasonable precautions to safeguard your data.
           </p>
 
-          <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">10. Children's Privacy</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">10. Children&rsquo;s Privacy</h2>
           <p className="text-lg text-gray-700 mb-6">
             Our Services are not directed toward children under 13, and we do not knowingly collect information from them.
             If you believe a child has provided us data, please contact us to have it deleted.
@@ -168,7 +169,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">11. Changes to This Policy</h2>
           <p className="text-lg text-gray-700 mb-6">
             We may update this Privacy Policy periodically.
-            Updates will appear on this page with a new "Last updated" date.
+            Updates will appear on this page with a new &ldquo;Last updated&rdquo; date.
             Significant changes may also be communicated in-app or via notification.
           </p>
 
